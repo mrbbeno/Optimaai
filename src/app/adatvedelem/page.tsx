@@ -12,23 +12,23 @@ export default function Adatvedelem() {
         <div className="grid-texture fixed inset-0 pointer-events-none z-0" />
 
         {/* HEADER */}
-        <section className="relative px-6 md:px-12 pt-[160px] pb-[80px] z-10">
+        <section className="relative px-6 md:px-12 pt-[120px] md:pt-[160px] pb-[60px] md:pb-[80px] z-10">
           <div className="mx-auto max-w-[1440px]">
-            <span className="font-mono text-[11px] text-tertiary tracking-[0.15em] uppercase">JOGI DOKUMENTUM</span>
-            <h1 className="mt-4 font-syne text-[56px] md:text-[72px] font-extrabold text-primary leading-[1.0]">
+            <span className="font-mono text-[10px] md:text-[11px] text-tertiary tracking-[0.15em] uppercase">JOGI DOKUMENTUM</span>
+            <h1 className="mt-4 font-syne text-[40px] md:text-[72px] font-extrabold text-primary leading-[1.1] md:leading-[1.0]">
               Adatkezelési tájékoztató
             </h1>
-            <div className="mt-8 flex gap-8">
-              <span className="font-mono text-[12px] text-tertiary">Hatályos: 2025. január 1-től</span>
-              <span className="font-mono text-[12px] text-tertiary">Optimaai Stúdió</span>
+            <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-8">
+              <span className="font-mono text-[11px] md:text-[12px] text-tertiary">Hatályos: 2025. január 1-től</span>
+              <span className="font-mono text-[11px] md:text-[12px] text-tertiary">Optimaai Stúdió</span>
             </div>
           </div>
         </section>
 
         {/* CONTENT */}
-        <section className="relative px-6 md:px-12 pb-[160px] z-10">
+        <section className="relative px-6 md:px-12 pb-[100px] md:pb-[160px] z-10">
           <div className="mx-auto max-w-[1440px]">
-            <div className="max-w-[720px] border-t border-border pt-12">
+            <div className="max-w-[720px] border-t border-border pt-10 md:pt-12">
               
               <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">1. Az adatkezelő adatai</h2>
               <ul className="space-y-2 mb-4">
