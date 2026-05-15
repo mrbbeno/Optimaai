@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const selectOptions = {
   systems: ["Weboldal / webrendszer", "AI automatizáció", "Ingatlan marketing platform"],
   situations: ["Még nincs weboldalam", "Van, de nem teljesít", "Meglévő rendszert bővítenék", "Új projekt, nulláról"],
-  budgets: ["300 000 – 600 000 Ft", "600 000 – 1 500 000 Ft", "1 500 000 Ft felett", "Még nem tudom"],
+  budgets: ["300 000 Ft alatt", "300 000 – 600 000 Ft", "600 000 – 1 500 000 Ft", "1 500 000 Ft felett", "Még nem tudom"],
   deadlines: ["Minél hamarabb", "1–2 hónapon belül", "3+ hónap múlva", "Még nincs konkrét határidő"]
 };
 
