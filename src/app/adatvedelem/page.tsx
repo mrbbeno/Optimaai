@@ -15,7 +15,7 @@ export default function Adatvedelem() {
         <section className="relative px-6 md:px-12 pt-[120px] md:pt-[160px] pb-[60px] md:pb-[80px] z-10">
           <div className="mx-auto max-w-[1440px]">
             <span className="font-mono text-[10px] md:text-[11px] text-tertiary tracking-[0.15em] uppercase">JOGI DOKUMENTUM</span>
-            <h1 className="mt-4 font-syne text-[40px] md:text-[72px] font-extrabold text-primary leading-[1.1] md:leading-[1.0]">
+            <h1 className="mt-4 font-syne text-[32px] md:text-[72px] font-extrabold text-primary leading-[1.1] md:leading-[1.0] break-words [hyphens:auto]">
               Adatkezelési tájékoztató
             </h1>
             <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-8">
@@ -30,7 +30,7 @@ export default function Adatvedelem() {
           <div className="mx-auto max-w-[1440px]">
             <div className="max-w-[720px] border-t border-border pt-10 md:pt-12">
               
-              <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">1. Az adatkezelő adatai</h2>
+              <h2 className="font-syne text-[18px] md:text-[22px] font-bold text-primary mt-12 md:mt-16 mb-5 uppercase tracking-wide">1. Az adatkezelő adatai</h2>
               <ul className="space-y-2 mb-4">
                 <li className="font-ui text-[16px] font-light text-secondary flex items-start">
                   <span className="text-accent mr-2">—</span> Név: Optimaai
@@ -43,7 +43,7 @@ export default function Adatvedelem() {
                 </li>
               </ul>
 
-              <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">2. Az adatkezelés alapelvei</h2>
+              <h2 className="font-syne text-[18px] md:text-[22px] font-bold text-primary mt-12 md:mt-16 mb-5 uppercase tracking-wide">2. Az adatkezelés alapelvei</h2>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-4">
                 Az Optimaai személyes adatokat kizárólag az alábbi elvek szerint kezel:
               </p>
@@ -65,9 +65,9 @@ export default function Adatvedelem() {
                 </li>
               </ul>
 
-              <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">3. Kezelt adatok és céljuk</h2>
+              <h2 className="font-syne text-[18px] md:text-[22px] font-bold text-primary mt-12 md:mt-16 mb-5 uppercase tracking-wide">3. Kezelt adatok és céljuk</h2>
               
-              <h3 className="font-ui text-[18px] font-medium text-primary mt-8 mb-4">3.1 Kapcsolatfelvételi űrlap</h3>
+              <h3 className="font-ui text-[16px] md:text-[18px] font-medium text-primary mt-8 mb-4">3.1 Kapcsolatfelvételi űrlap</h3>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-2">
                 <strong>Kezelt adatok:</strong> név, email cím, cégnév (opcionális), projekt leírás
               </p>
@@ -81,7 +81,7 @@ export default function Adatvedelem() {
                 <strong>Tárolás időtartama:</strong> az érdeklődéstől számított 2 év, illetve az üzleti kapcsolat megszűnéséig
               </p>
 
-              <h3 className="font-ui text-[18px] font-medium text-primary mt-8 mb-4">3.2 Google Analytics (statisztikai sütik)</h3>
+              <h3 className="font-ui text-[16px] md:text-[18px] font-medium text-primary mt-8 mb-4">3.2 Google Analytics (statisztikai sütik)</h3>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-2">
                 <strong>Kezelt adatok:</strong> anonimizált látogatói adatok (oldalmegtekintések, tartózkodási idő, forgalmi forrás)
               </p>
@@ -101,7 +101,7 @@ export default function Adatvedelem() {
                 Megjegyzés: a Google Analytics csak akkor aktiválódik, ha a felhasználó a cookie bannerben ehhez hozzájárult. Az IP-cím anonimizálva kerül rögzítésre.
               </p>
 
-              <h3 className="font-ui text-[18px] font-medium text-primary mt-8 mb-4">3.3 Technikai (szükséges) sütik</h3>
+              <h3 className="font-ui text-[16px] md:text-[18px] font-medium text-primary mt-8 mb-4">3.3 Technikai (szükséges) sütik</h3>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-2">
                 <strong>Kezelt adatok:</strong> cookie hozzájárulás állapota (localStorage)
               </p>
@@ -115,7 +115,7 @@ export default function Adatvedelem() {
                 <strong>Tárolás időtartama:</strong> 12 hónap
               </p>
 
-              <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">4. Adattovábbítás</h2>
+              <h2 className="font-syne text-[18px] md:text-[22px] font-bold text-primary mt-12 md:mt-16 mb-5 uppercase tracking-wide">4. Adattovábbítás</h2>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-4">
                 Az Optimaai személyes adatokat harmadik félnek nem ad el és nem ad át, kivéve:
               </p>
@@ -131,7 +131,7 @@ export default function Adatvedelem() {
                 Minden adattovábbítás az EU adatvédelmi szabályainak megfelelően történik.
               </p>
 
-              <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">5. Az érintett jogai</h2>
+              <h2 className="font-syne text-[18px] md:text-[22px] font-bold text-primary mt-12 md:mt-16 mb-5 uppercase tracking-wide">5. Az érintett jogai</h2>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-4">
                 GDPR alapján az érintett jogosult:
               </p>
@@ -159,7 +159,7 @@ export default function Adatvedelem() {
                 Jogai gyakorlásához írjon a <strong>info@optimaai.eu</strong> email címre. A kérésre 30 napon belül válaszolunk.
               </p>
 
-              <h2 className="font-syne text-[22px] font-bold text-primary mt-16 mb-5 uppercase tracking-wide">6. Sütik kezelése</h2>
+              <h2 className="font-syne text-[18px] md:text-[22px] font-bold text-primary mt-12 md:mt-16 mb-5 uppercase tracking-wide">6. Sütik kezelése</h2>
               <p className="font-ui text-[16px] font-light text-secondary leading-[1.8] mb-4">
                 Az oldalon kétféle süti működik:
               </p>
