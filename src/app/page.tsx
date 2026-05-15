@@ -312,10 +312,10 @@ export default function Home() {
             {/* Project 3 */}
             <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-20 items-center">
               <div className="flex flex-col gap-8">
-                <span className="label-mono !text-[10px] text-secondary tracking-[0.12em]">EGÉSZSÉGÜGY · WEB + AI AUTOMATIZÁCIÓ</span>
+                <span className="label-mono !text-[10px] text-secondary tracking-[0.12em]">EGÉSZSÉGÜGY · WEBOLDAL + ARCULAT</span>
                 <h3 className="font-display text-[48px] md:text-[52px] leading-[1.0] text-primary">Aranykereszt.hu</h3>
                 <p className="font-ui text-[16px] md:text-[18px] font-[300] text-secondary leading-[1.8] max-w-[540px]">
-                  Prémium rebrand és AI-vezérelt ügyfélkommunikációs rendszer. Az automatizáció kezeli a beérkező megkeresések kvalifikálását, az időpontfoglalást és az ügyfélkommunikációt — emberi erőforrás nélkül, 24/7.
+                  Prémium digitális arculatfrissítés és egyedi fejlesztésű, páciensfókuszú weboldal. A projekt célja a szolgáltatások letisztult bemutatása és a digitális bizalomépítés modernizálása volt.
                 </p>
                 <Link href="/munkak" className="font-mono text-[12px] text-accent hover:underline underline-offset-8">
                   Projekt részletei →
@@ -323,9 +323,9 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-10 lg:pl-20">
                 {[
-                  { value: "80%", label: "Adminisztrációs idő megtakarítás" },
-                  { value: "24/7", label: "Automatizált ügyfélkezelés" },
-                  { value: "Egyedi", label: "Nulla sablonmegoldás" },
+                  { value: "100%", label: "Egyedi tervezés" },
+                  { value: "Saját", label: "Arculati rendszer" },
+                  { value: "Gyors", label: "Betöltési sebesség" },
                 ].map((m) => (
                   <div key={m.label} className="flex flex-col border-b border-border pb-4 last:border-0">
                     <span className="font-mono text-[48px] md:text-[56px] text-primary leading-tight">{m.value}</span>

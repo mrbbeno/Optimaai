@@ -35,13 +35,13 @@ const projects = [
   {
     id: "03",
     name: "Aranykereszt.hu",
-    type: "Web + AI Automatizáció",
-    result: "−80% admin idő",
-    desc: "Prémium weboldal rebrand és AI-vezérelt ügyfélkommunikációs rendszer egészségügyi szolgáltató számára. Az automatizáció kezeli a beérkező megkeresések kvalifikálását, az időpontfoglalást és az ügyfélkommunikációt.",
+    type: "Weboldal + Arculatfrissítés",
+    result: "Prémium brand élmény",
+    desc: "Teljes digitális arculatfrissítés és egyedi fejlesztésű, reszponzív weboldal egészségügyi szolgáltató számára. A projekt fókuszában a páciensélmény modernizálása és a szolgáltatások letisztult, bizalmat gerjesztő bemutatása állt.",
     metrics: [
-      { value: "80%", label: "Admin idő megtakarítás" },
-      { value: "24/7", label: "Automatizált kezelés" },
-      { value: "Egyedi", label: "Nulla sablon" }
+      { value: "100%", label: "Egyedi tervezés" },
+      { value: "Saját", label: "Arculati rendszer" },
+      { value: "Gyors", label: "Betöltési sebesség" }
     ]
   }
 ];
