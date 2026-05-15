@@ -12,10 +12,10 @@ const projects = [
     id: "01",
     name: "Sárhegyi Panoráma Lakópark",
     type: "Ingatlan Marketing Rendszer",
-    result: "+68% konverzió",
-    desc: "Integrált digitális értékesítési ökoszisztéma egy prémium lakóparknak. A rendszer magában foglalja a project landing oldalt, az automatizált lead-kezelést és a foglalási folyamatot — az érdeklődőt emberi beavatkozás nélkül vezeti végig a vásárlási döntésig.",
+    result: "Full Delivery",
+    desc: "Teljeskörű digitális arculat és értékesítési platform tervezése és kivitelezése. A projekt során egyedi webdizájnt, integrált analytics rendszert és automatizált lead-kezelő folyamatokat építettünk fel, amelyek segítik a lakópark hatékony értékesítését és az adatalapú döntéshozatalt.",
     metrics: [
-      { value: "68%", label: "Konverzióarány-növekedés" },
+      { value: "Full", label: "Weboldal, Design & Analytics" },
       { value: "3 hét", label: "Leszállítási idő" },
       { value: "Automatizált", label: "Lead kvalifikáció" }
     ]

@@ -1,36 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
-// Utility for live time
-const useLiveTime = () => {
-  const [time, setTime] = useState("");
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const options: Intl.DateTimeFormatOptions = {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        timeZone: "Europe/Budapest",
-        hour12: false,
-      };
-      setTime(new Intl.DateTimeFormat("en-GB", options).format(now));
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return time;
-};
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -46,107 +20,86 @@ const fadeInUp = {
 };
 
 export default function Home() {
-  const time = useLiveTime();
-
   return (
     <>
       <Navbar />
-      
+
       <main className="relative">
         <div className="grid-texture fixed inset-0 pointer-events-none z-0" />
-        
+
         {/* HERO SECTION - REVERTED */}
-        <section className="relative h-[100svh] w-full px-6 md:px-12 z-10 overflow-hidden">
-          <div className="mx-auto max-w-[1440px] h-full flex flex-col pt-[28vh]">
-            
-            {/* Top row */}
-            <div className="flex justify-between items-center w-full">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <motion.span 
-                    animate={{ opacity: [1, 0.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-2 h-2 rounded-full bg-accent"
-                  />
-                  <span className="label-mono">LIVE</span>
-                </div>
-                <span className="text-secondary font-mono text-[11px] tracking-[0.15em]">
-                  — DIGITÁLIS RENDSZEREK STÚDIÓJA — BUDAPEST
-                </span>
-              </div>
-              <div className="label-mono hidden md:block">
-                {time} CET
-              </div>
-            </div>
+        <section className="relative min-h-[100svh] w-full px-6 md:px-12 z-10 overflow-hidden flex flex-col">
+          <div className="mx-auto max-w-[1440px] w-full h-full flex flex-col pt-[20vh] md:pt-[24vh]">
 
-            {/* Main Headline */}
-            <div className="mt-20">
-              {["Rendszerek,", "amelyek", "teljesítenek."].map((text, i) => (
-                <motion.div
-                  key={text}
-                  custom={i}
-                  initial="initial"
-                  animate="animate"
-                  variants={fadeInUp}
-                  className={cn(
-                    "font-display text-[72px] md:text-[108px] leading-[0.95] tracking-[-0.02em] text-primary",
-                    i === 1 && "italic"
-                  )}
-                >
-                  {text}
-                </motion.div>
-              ))}
-            </div>
+            <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center w-full">
+              {/* Main Headline */}
+              <div className="mt-0">
+                {["Rendszerek,", "amelyek", "teljesítenek."].map((text, i) => (
+                  <motion.div
+                    key={text}
+                    custom={i}
+                    initial="initial"
+                    animate="animate"
+                    variants={fadeInUp}
+                    className={cn(
+                      "font-display text-[72px] sm:text-[84px] md:text-[108px] leading-[0.95] tracking-[-0.02em] text-primary",
+                      i === 1 && "italic"
+                    )}
+                  >
+                    {text}
+                  </motion.div>
+                ))}
+              </div>
 
-            {/* Floating text - Desktop right */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.1, duration: 0.6 }}
-              className="md:absolute md:right-12 md:top-[45vh] mt-12 md:mt-0 max-w-[320px]"
-            >
-              <p className="font-ui text-[15px] leading-[1.7] text-secondary">
-                Prémium weboldalakat, AI automatizációs rendszereket és ingatlan marketing platformokat fejlesztünk — sablon nélkül.
-              </p>
-              <Link href="/kapcsolat" className="btn-cta mt-8 inline-block">
-                Projekt indítása →
-              </Link>
-            </motion.div>
+              {/* Floating text - Desktop right */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.1, duration: 0.6 }}
+                className="mt-12 md:mt-2 max-w-[320px]"
+              >
+                <p className="font-ui text-[14px] md:text-[15px] leading-[1.7] text-secondary">
+                  Prémium weboldalakat, AI automatizációs rendszereket és ingatlan marketing platformokat fejlesztünk — sablon nélkül.
+                </p>
+                <Link href="/kapcsolat" className="btn-cta mt-6 md:mt-8 inline-block">
+                  Projekt indítása →
+                </Link>
+              </motion.div>
+            </div>
 
             {/* Hero Bottom Bar */}
-            <div className="absolute bottom-12 left-6 right-6 md:left-12 md:right-12 flex flex-col md:flex-row justify-between items-end md:items-center w-full max-w-[1440px] mx-auto gap-8 md:gap-0">
-              <div className="flex gap-8 md:gap-16 items-center">
+            <div className="mt-24 md:mt-auto pb-0 md:pb-0 md:absolute md:bottom-12 left-0 right-0 flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center w-full max-w-[1440px] mx-0 md:mx-auto gap-8 md:gap-0">
+              <div className="flex w-full justify-start md:w-auto gap-8 md:gap-16 items-center">
                 {[
                   { value: "34+", label: "Leszállított rendszer" },
                   { value: "3×", label: "Átlagos ügyfél-ROI" },
-                  { value: "2019", label: "Alapítva" },
+                  { value: "2024", label: "Alapítva" },
                 ].map((item, i) => (
-                  <div key={item.label} className="flex items-center gap-8 md:gap-16">
+                  <div
+                    key={item.label}
+                    className={cn(
+                      "flex items-center gap-8 md:gap-16",
+                      i === 2 && "hidden md:flex"
+                    )}
+                  >
                     <div className="flex flex-col gap-1">
                       <span className="font-mono text-[24px] md:text-[28px] text-primary">{item.value}</span>
                       <span className="label-mono !text-[12px] text-secondary uppercase">{item.label}</span>
                     </div>
-                    {i < 2 && <span className="text-border h-8 w-[1px] hidden md:block" />}
+                    {i < 1 && <span className="text-border h-8 w-[1px] hidden md:block" />}
                   </div>
                 ))}
               </div>
-              
-              <motion.div 
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="label-mono !text-[12px] text-secondary flex items-center gap-2"
-              >
-                ↓ Görgess
-              </motion.div>
+
             </div>
 
           </div>
         </section>
 
         {/* ABOUT SECTION (00) - KEPT FROM PREVIOUS REQUEST */}
-        <section className="relative w-full border-t border-border py-[100px] md:py-[160px] px-6 md:px-12 z-10 bg-bg">
+        <section className="relative w-full border-t border-border py-[40px] md:py-[160px] px-6 md:px-12 z-10 bg-bg">
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-[80px] items-start">
-            
+
             {/* Left Column */}
             <div className="lg:sticky lg:top-[120px] flex flex-col">
               <div className="flex flex-col">
@@ -157,7 +110,7 @@ export default function Home() {
                 Optimaai
               </h2>
               <p className="mt-[16px] font-mono text-[13px] text-accent">
-                Budapest, 2019 óta.
+                Budapest, 2024 óta.
               </p>
             </div>
 
@@ -172,11 +125,11 @@ export default function Home() {
               <p className="font-ui text-[16px] font-[300] leading-[1.8] text-secondary">
                 Nem csak ügyfélprojekteket fejlesztünk. A GoStayDirect — a saját direkt foglalási platformunk Balaton-parti nyaralóknak — bizonyítja, hogy a rendszereinket mi magunk is használjuk és hiszünk bennük.
               </p>
-              
+
               {/* Short facts table */}
               <div className="mt-2 border-t border-border">
                 {[
-                  { label: "Alapítva", value: "2019" },
+                  { label: "Alapítva", value: "2024" },
                   { label: "Helyszín", value: "Budapest, Magyarország" },
                   { label: "Csapatméret", value: "Kis, célzott műhely" },
                   { label: "Specializáció", value: "Web · AI · Ingatlan platformok" },
@@ -228,7 +181,7 @@ export default function Home() {
                   tech: "CRM · Booking API · SEO"
                 }
               ].map((service) => (
-                <div 
+                <div
                   key={service.id}
                   className="group grid grid-cols-1 md:grid-cols-[80px_1fr_2fr_1.5fr] items-center gap-6 md:gap-12 py-10 border-b border-border transition-colors duration-200 hover:bg-surface px-4 -mx-4"
                 >
@@ -263,7 +216,7 @@ export default function Home() {
                 <span className="label-mono !text-[10px] text-secondary tracking-[0.12em]">INGATLANFEJLESZTÉS · MARKETING RENDSZER</span>
                 <h3 className="font-display text-[48px] md:text-[52px] leading-[1.0] text-primary">Sárhegyi Panoráma Lakópark</h3>
                 <p className="font-ui text-[16px] md:text-[18px] font-[300] text-secondary leading-[1.8] max-w-[540px]">
-                  Integrált digitális értékesítési ökoszisztéma: project landing oldal, automatizált lead-kezelés és foglalási folyamat. A rendszer az érdeklődőt emberi beavatkozás nélkül vezeti végig a vásárlási döntésig.
+                  Teljeskörű digitális arculat és értékesítési platform. Egyedi webdizájnt, integrált analytics rendszert és automatizált lead-kezelő folyamatokat építettünk fel, amelyek segítik a lakópark hatékony értékesítését.
                 </p>
                 <Link href="/munkak" className="font-mono text-[12px] text-accent hover:underline underline-offset-8">
                   Projekt részletei →
@@ -271,7 +224,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-10 lg:pl-20">
                 {[
-                  { value: "68%", label: "Konverzióarány-növekedés" },
+                  { value: "Full", label: "Weboldal, Design & Analytics" },
                   { value: "3 hét", label: "Teljes rendszer leszállítása" },
                   { value: "Auto", label: "Lead kvalifikáció" },
                 ].map((m) => (
