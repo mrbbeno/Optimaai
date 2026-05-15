@@ -43,8 +43,8 @@ export default function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-[1000] h-16 w-full transition-all duration-300 px-6 md:px-[64px]",
-        isScrolled && !menuOpen
-          ? "bg-[#080809ec] backdrop-blur-[20px] saturate-[180%] border-b border-border" 
+        (isScrolled || menuOpen)
+          ? "bg-[#080809] border-b border-border" 
           : "bg-transparent border-b border-transparent"
       )}
     >
@@ -107,35 +107,47 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[999] flex flex-col bg-[#080809f7]"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[1001] flex flex-col bg-[#080809] h-[100dvh]"
             onClick={() => setMenuOpen(false)}
           >
             <div 
-              className="flex flex-col items-center justify-center h-full px-6"
+              className="flex flex-col items-center justify-center h-full px-6 pt-16"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col w-full max-w-[400px]">
-                {navLinks.map((link) => (
-                  <Link
+                {navLinks.map((link, i) => (
+                  <motion.div
                     key={link.name}
-                    href={link.href}
-                    className="font-display text-[36px] text-primary py-5 border-b border-border text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.05 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className="font-display text-[36px] text-primary py-5 border-b border-border text-center block"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + navLinks.length * 0.05 }}
+                >
+                  <Link
+                    href="/kapcsolat"
+                    className="mt-12 text-accent border border-accent rounded-[4px] py-4 font-ui text-[15px] font-[400] text-center uppercase tracking-widest hover:bg-accent hover:text-bg transition-all block"
                     onClick={() => setMenuOpen(false)}
                   >
-                    {link.name}
+                    Írj nekünk →
                   </Link>
-                ))}
-                <Link
-                  href="/kapcsolat"
-                  className="mt-12 text-accent border border-accent rounded-[4px] py-4 font-ui text-[15px] font-[400] text-center uppercase tracking-widest hover:bg-accent hover:text-bg transition-all"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Írj nekünk →
-                </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>

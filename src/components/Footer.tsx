@@ -5,8 +5,12 @@ const footerLinks = [
   { name: "Főoldal", href: "/" },
   { name: "Szolgáltatások", href: "/szolgaltatasok" },
   { name: "Munkáink", href: "/munkak" },
-  { name: "Folyamat", href: "/folyamat" },
   { name: "Kapcsolat", href: "/kapcsolat" },
+];
+
+const legalLinks = [
+  { name: "ÁSZF", href: "/aszf" },
+  { name: "Adatvédelem", href: "/adatvedelem" },
 ];
 
 export default function Footer() {
@@ -30,16 +34,29 @@ export default function Footer() {
           </div>
 
           {/* Center: Navigation Table */}
-          <div className="flex flex-wrap gap-x-8 gap-y-4 md:justify-center">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="font-ui text-[13px] text-secondary hover:text-primary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="flex flex-col space-y-6 md:items-center">
+            <div className="flex flex-wrap gap-x-8 gap-y-4 md:justify-center">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="font-ui text-[13px] text-secondary hover:text-primary transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 md:justify-center">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="font-mono text-[10px] text-tertiary hover:text-secondary transition-colors uppercase tracking-widest"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Right: Contact */}

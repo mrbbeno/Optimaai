@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Instrument_Serif, IBM_Plex_Sans, IBM_Plex_Mono, Syne } from "next/font/google";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -7,6 +7,12 @@ const instrumentSerif = Instrument_Serif({
   weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-display",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
 });
 
 const plexSans = IBM_Plex_Sans({
@@ -20,6 +26,10 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
   variable: "--font-mono",
 });
+
+import { CookieConsentProvider } from "@/context/CookieConsentContext";
+import CookieBanner from "@/components/CookieBanner";
+import GoogleAnalyticsWrapper from "@/components/GoogleAnalyticsWrapper";
 
 export const metadata: Metadata = {
   title: "Optimaai | Prémium Webfejlesztés, AI Automatizáció & Ingatlan Marketing",
@@ -35,9 +45,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hu" className={`${instrumentSerif.variable} ${plexSans.variable} ${plexMono.variable}`}>
+    <html lang="hu" className={`${instrumentSerif.variable} ${syne.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <body className="min-h-screen">
-        {children}
+        <CookieConsentProvider>
+          <GoogleAnalyticsWrapper />
+          <CookieBanner />
+          {children}
+        </CookieConsentProvider>
       </body>
     </html>
   );

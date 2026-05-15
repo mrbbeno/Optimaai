@@ -15,6 +15,7 @@
   --color-accent-border: rgba(184, 151, 62, 0.2);
   
   --font-display: 'Instrument Serif', Georgia, serif;
+  --font-syne: 'Syne', sans-serif;
   --font-ui: 'IBM Plex Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
   
@@ -38,6 +39,7 @@
     --white: #FFFFFF;
     
     --font-display: var(--font-display);
+    --font-syne: var(--font-syne);
     --font-ui: var(--font-ui);
     --font-mono: var(--font-mono);
   }
