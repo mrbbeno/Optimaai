@@ -33,23 +33,23 @@ export default function Home() {
 
             <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center w-full">
               {/* Main Headline */}
-              <div className="mt-0">
+              <h1 className="mt-0">
                 {["Rendszerek,", "amelyek", "teljesítenek."].map((text, i) => (
-                  <motion.div
+                  <motion.span
                     key={text}
                     custom={i}
                     initial="initial"
                     animate="animate"
                     variants={fadeInUp}
                     className={cn(
-                      "font-display text-[72px] sm:text-[84px] md:text-[108px] leading-[0.95] tracking-[-0.02em] text-primary",
+                      "block font-display text-[72px] sm:text-[84px] md:text-[108px] leading-[0.95] tracking-[-0.02em] text-primary",
                       i === 1 && "italic"
                     )}
                   >
                     {text}
-                  </motion.div>
+                  </motion.span>
                 ))}
-              </div>
+              </h1>
 
               {/* Floating text - Desktop right */}
               <motion.div

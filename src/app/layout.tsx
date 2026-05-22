@@ -30,10 +30,75 @@ const plexMono = IBM_Plex_Mono({
 import { CookieConsentProvider } from "@/context/CookieConsentContext";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleAnalyticsWrapper from "@/components/GoogleAnalyticsWrapper";
+import {
+  OrganizationJsonLd,
+  WebSiteJsonLd,
+  LocalBusinessJsonLd,
+} from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Optimaai | Prémium Webfejlesztés, AI Automatizáció & Ingatlan Marketing",
-  description: "Az Optimaai prémium weboldalakat, AI automatizációs rendszereket és ingatlan marketing platformokat fejleszt Budapesten. Egyedi fejlesztés, mérhető eredmények.",
+  metadataBase: new URL("https://optimaai.eu"),
+  title: {
+    default: "Optimaai | Weboldal Készítés & AI Automatizáció Budapest",
+    template: "%s | Optimaai",
+  },
+  description:
+    "Egyedi weboldal készítés és AI automatizáció vállalkozásoknak Budapesten. Nem sablonból dolgozunk — minden projektet az üzleti céljaidhoz tervezünk.",
+  keywords: [
+    "weboldal készítés",
+    "webfejlesztés",
+    "weboldal készítés Budapest",
+    "egyedi weboldal",
+    "céges weboldal",
+    "webdesign",
+    "AI automatizáció",
+    "weboldal árak",
+    "landing oldal készítés",
+    "weboldal fejlesztés",
+    "ingatlan marketing",
+    "prémium weboldal",
+  ],
+  authors: [{ name: "Optimaai" }],
+  creator: "Optimaai",
+  publisher: "Optimaai",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "hu_HU",
+    url: "https://optimaai.eu",
+    siteName: "Optimaai",
+    title: "Optimaai | Weboldal Készítés & AI Automatizáció Budapest",
+    description:
+      "Egyedi weboldal készítés és AI automatizáció vállalkozásoknak Budapesten. Nem sablonból dolgozunk — minden projektet az üzleti céljaidhoz tervezünk.",
+    images: [
+      {
+        url: "/Optimaai_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Optimaai — Weboldal Készítés & AI Automatizáció",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Optimaai | Weboldal Készítés & AI Automatizáció Budapest",
+    description:
+      "Egyedi weboldal készítés és AI automatizáció vállalkozásoknak Budapesten.",
+    images: ["/Optimaai_logo.png"],
+  },
+  alternates: {
+    canonical: "https://optimaai.eu",
+  },
   icons: {
     icon: "/Optimaai_logo.png",
   },
@@ -47,6 +112,9 @@ export default function RootLayout({
   return (
     <html lang="hu" className={`${instrumentSerif.variable} ${syne.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <body className="min-h-screen">
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <LocalBusinessJsonLd />
         <CookieConsentProvider>
           <GoogleAnalyticsWrapper />
           <CookieBanner />
