@@ -1,8 +1,16 @@
 import { MetadataRoute } from 'next'
- 
-export default function sitemap(): MetadataRoute.Sitemap {
+
+export async function generateSitemaps() {
+  return [{ id: 0 }]
+}
+
+export default async function sitemap({
+  id,
+}: {
+  id: number
+}): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://optimaai.eu'
-  
+
   return [
     {
       url: baseUrl,

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/adatvedelem/', '/aszf/'],
     },
-    sitemap: 'https://optimaai.eu/sitemap.xml',
+    sitemap: 'https://optimaai.eu/sitemap/0.xml',
   }
 }
