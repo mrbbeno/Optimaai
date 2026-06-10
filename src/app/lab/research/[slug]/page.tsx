@@ -16,6 +16,21 @@ export default async function ResearchArticlePage({
     notFound();
   }
 
+  const renderContent = (items: string[]) => (
+    <div className="flex flex-col gap-4">
+      {items.map((item, i) => {
+        const isBullet = item.startsWith('- ');
+        const text = isBullet ? item.substring(2) : item;
+        return (
+          <div key={i} className={`font-sans text-[16px] text-neutral-700 font-light leading-relaxed ${isBullet ? 'flex items-start gap-3 pl-2 md:pl-4' : ''}`}>
+            {isBullet && <span className="shrink-0 w-1 h-1 rounded-full bg-neutral-300 mt-2.5" />}
+            <span>{text}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+
   return (
     <main className="w-full min-h-screen bg-[#FBFBFD] flex flex-col relative pb-32">
       {/* Navbar / Top bar */}
@@ -59,14 +74,7 @@ export default async function ResearchArticlePage({
               <Target className="w-4 h-4 text-neutral-400" />
               <h2 className="font-sans text-[14px] font-medium text-neutral-900 uppercase tracking-widest">A kihívás & Hipotézis</h2>
             </div>
-            <ul className="flex flex-col gap-4">
-              {article.hypothesis.map((item, i) => (
-                <li key={i} className="font-sans text-[16px] text-neutral-700 font-light leading-relaxed flex items-start gap-3">
-                  <span className="shrink-0 w-1 h-1 rounded-full bg-neutral-300 mt-2.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            {renderContent(article.hypothesis)}
           </section>
 
           {/* Achievements */}
@@ -75,14 +83,7 @@ export default async function ResearchArticlePage({
               <CheckCircle2 className="w-4 h-4 text-neutral-400" />
               <h2 className="font-sans text-[14px] font-medium text-neutral-900 uppercase tracking-widest">Mit értünk el? (Sikerek)</h2>
             </div>
-            <ul className="flex flex-col gap-4">
-              {article.achievements.map((item, i) => (
-                <li key={i} className="font-sans text-[16px] text-neutral-700 font-light leading-relaxed flex items-start gap-3">
-                  <span className="shrink-0 w-1 h-1 rounded-full bg-neutral-300 mt-2.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            {renderContent(article.achievements)}
           </section>
 
           {/* Limitations / What didn't work */}
@@ -91,14 +92,7 @@ export default async function ResearchArticlePage({
               <XCircle className="w-4 h-4 text-neutral-400" />
               <h2 className="font-sans text-[14px] font-medium text-neutral-900 uppercase tracking-widest">Mi nem működött? (Kudarcok & Korlátok)</h2>
             </div>
-            <ul className="flex flex-col gap-4">
-              {article.limitations.map((item, i) => (
-                <li key={i} className="font-sans text-[16px] text-neutral-700 font-light leading-relaxed flex items-start gap-3">
-                  <span className="shrink-0 w-1 h-1 rounded-full bg-neutral-300 mt-2.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            {renderContent(article.limitations)}
           </section>
 
           {/* Next Steps */}
@@ -107,14 +101,7 @@ export default async function ResearchArticlePage({
               <ArrowRight className="w-4 h-4 text-neutral-400" />
               <h2 className="font-sans text-[14px] font-medium text-neutral-900 uppercase tracking-widest">Hogyan tovább?</h2>
             </div>
-            <ul className="flex flex-col gap-4">
-              {article.nextSteps.map((item, i) => (
-                <li key={i} className="font-sans text-[16px] text-neutral-700 font-light leading-relaxed flex items-start gap-3">
-                  <span className="shrink-0 w-1 h-1 rounded-full bg-neutral-300 mt-2.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            {renderContent(article.nextSteps)}
           </section>
 
         </div>
