@@ -14,7 +14,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "ai-driven-web-value",
     title: "Az AI-alapú weboldalak értéke a funkcionalitásban és az üzleti célban rejlik",
-    date: "2026.06.01",
+    date: "2026.02.15",
     category: "Strategy",
     summary: "Részletes elemzés arról, hogyan változtatja meg az AI a modern webes rendszerek szerepét, és mi határozza meg egy weboldal valódi üzleti értékét a mai digitális környezetben.",
     hypothesis: [
@@ -50,7 +50,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "right-complexity-in-systems",
     title: "A hatékony rendszerek kulcsa a megfelelően kiválasztott komplexitás",
-    date: "2026.06.03",
+    date: "2026.03.04",
     category: "Architecture",
     summary: "Részletes elemzés arról, hogyan befolyásolja a rendszertervezési döntésekben a komplexitás szintje a stabilitást, skálázhatóságot és hosszú távú fenntarthatóságot AI-alapú és automatizált rendszerek esetén.",
     hypothesis: [
@@ -89,7 +89,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "fast-validation-in-development",
     title: "A fejlesztési ciklusban a gyors validáció kritikus szerepet játszik",
-    date: "2026.06.05",
+    date: "2026.03.22",
     category: "Methodology",
     summary: "Részletes elemzés arról, hogyan befolyásolja a gyors iteráció, a valós környezetben történő tesztelés és a korai visszajelzések a szoftver- és AI-alapú rendszerek sikerességét.",
     hypothesis: [
@@ -128,7 +128,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "ai-value-in-business-problems",
     title: "Az AI rendszerek értéke a konkrét üzleti problémák megoldásában mérhető",
-    date: "2026.06.07",
+    date: "2026.04.10",
     category: "Business",
     summary: "Részletes elemzés arról, hogyan válik az AI technológia valódi üzleti értékké, és mi különbözteti meg a “demó szintű AI-t” a működő, bevételt vagy hatékonyságot növelő rendszerektől.",
     hypothesis: [
@@ -167,7 +167,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "smb-digital-optimization",
     title: "A kis- és középvállalkozások digitális rendszereiben jelentős optimalizációs potenciál van",
-    date: "2026.06.09",
+    date: "2026.04.28",
     category: "Market Research",
     summary: "Részletes elemzés arról, hogyan jelenik meg a digitalizációs érettség különbsége a kis- és középvállalkozásoknál, és milyen strukturált fejlesztési lehetőségek adódnak ebből AI- és automatizáció-alapú rendszerek szempontjából.",
     hypothesis: [
@@ -206,7 +206,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "website-as-business-tool",
     title: "A weboldal mint üzleti eszköz, nem pusztán digitális jelenlét",
-    date: "2026.06.11",
+    date: "2026.05.14",
     category: "Conversion",
     summary: "Részletes elemzés arról, hogyan változott meg a weboldalak szerepe a modern digitális környezetben, és hogyan alakítható át egy hagyományos “online jelenlét” aktív üzleti rendszerré, amely közvetlenül hozzájárul az ügyfélszerzéshez és bevételgeneráláshoz.",
     hypothesis: [
@@ -246,7 +246,7 @@ export const researchArticles: ResearchArticle[] = [
   {
     slug: "automation-and-efficiency",
     title: "Az automatizáció szerepe a működési hatékonyság növelésében",
-    date: "2026.06.13",
+    date: "2026.06.02",
     category: "Automation",
     summary: "Részletes elemzés arról, hogyan hat az automatizáció a modern digitális rendszerek működésére, különös tekintettel a folyamatok skálázhatóságára, a manuális terhelés csökkentésére és a rendszerek közötti integrációs lehetőségekre.",
     hypothesis: [
