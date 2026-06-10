@@ -110,8 +110,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hu" className={`${instrumentSerif.variable} ${syne.variable} ${plexSans.variable} ${plexMono.variable}`}>
-      <body className="min-h-screen">
+    <html lang="hu" suppressHydrationWarning className={`scroll-smooth ${instrumentSerif.variable} ${syne.variable} ${plexSans.variable} ${plexMono.variable}`}>
+      <body className="min-h-screen relative">
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <LocalBusinessJsonLd />

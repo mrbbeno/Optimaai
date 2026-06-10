@@ -18,11 +18,13 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const savedConsent = localStorage.getItem("optimaai_cookie_consent");
-    if (savedConsent === "accepted") {
-      setConsentState("accepted");
-    } else if (savedConsent === "declined") {
-      setConsentState("declined");
-    }
+    setTimeout(() => {
+      if (savedConsent === "accepted") {
+        setConsentState("accepted");
+      } else if (savedConsent === "declined") {
+        setConsentState("declined");
+      }
+    }, 0);
   }, []);
 
   const acceptAll = () => {

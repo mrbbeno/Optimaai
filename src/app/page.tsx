@@ -14,7 +14,7 @@ const fadeInUp = {
     transition: {
       delay: 0.5 + i * 0.15,
       duration: 0.8,
-      ease: [0.16, 1, 0.3, 1] as any,
+      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
     },
   }),
 };
@@ -296,7 +296,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
             className="flex flex-col items-center"
           >
             <h2 className="font-display text-[64px] md:text-[80px] font-[800] text-primary leading-[1.0] max-w-[800px]">

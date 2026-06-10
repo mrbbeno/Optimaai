@@ -8,13 +8,18 @@ interface GoogleAnalyticsProps {
   analyticsConsent: boolean;
 }
 
+interface CustomWindow extends Window {
+  gtag?: (command: string, id: string, config: object) => void;
+}
+
 export default function GoogleAnalytics({ analyticsConsent }: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   useEffect(() => {
-    if (analyticsConsent && gaId && (window as any).gtag) {
-      (window as any).gtag("config", gaId, {
+    const customWindow = window as unknown as CustomWindow;
+    if (analyticsConsent && gaId && customWindow.gtag) {
+      customWindow.gtag("config", gaId, {
         page_path: pathname,
         anonymize_ip: true,
       });
