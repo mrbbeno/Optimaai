@@ -9,6 +9,7 @@ const navLinks = [
   { name: "Szolgáltatások", href: "/szolgaltatasok" },
   { name: "Munkáink", href: "/munkak" },
   { name: "Folyamat", href: "/folyamat" },
+  { name: "Optima Lab", href: "/lab" },
   { name: "Kapcsolat", href: "/kapcsolat" },
 ];
 

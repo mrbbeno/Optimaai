@@ -5,6 +5,7 @@ const footerLinks = [
   { name: "Főoldal", href: "/" },
   { name: "Szolgáltatások", href: "/szolgaltatasok" },
   { name: "Munkáink", href: "/munkak" },
+  { name: "Optima Lab", href: "/lab" },
   { name: "Kapcsolat", href: "/kapcsolat" },
 ];
 
