@@ -49,9 +49,9 @@ export default function LabPage() {
             <a href="#research" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light">Research</a>
           </div>
           <div className="h-4 w-px bg-neutral-200 hidden md:block" />
-          <Link href="/" className="font-sans text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-mono flex items-center gap-1.5">
+          <a href="https://optimaai.eu" className="font-sans text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-mono flex items-center gap-1.5">
             Agency Site <ExternalLink className="w-3 h-3" />
-          </Link>
+          </a>
         </nav>
       </div>
 
