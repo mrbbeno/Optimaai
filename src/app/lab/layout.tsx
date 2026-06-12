@@ -17,21 +17,46 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "OPTIMA LAB | Experimental UI & Motion Playground",
+  title: {
+    default: "OPTIMA LAB | Experimental UI & Motion Playground",
+    template: "%s | OPTIMA LAB",
+  },
   description: "A digital playground for interfaces, motion, and experiments by OPTIMA. Apple-level minimalism meets playful motion design.",
   openGraph: {
     title: "OPTIMA LAB | Experimental UI & Motion Playground",
     description: "A digital playground for interfaces, motion, and experiments by OPTIMA.",
     url: "https://lab.optimaai.eu",
     siteName: "OPTIMA LAB",
+    locale: "hu_HU",
+    type: "website",
     images: [
       {
         url: "/Optimaai_logo.png",
         width: 1200,
         height: 630,
-        alt: "OPTIMA LAB",
+        alt: "OPTIMA LAB — Experimental UI & Motion Playground",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OPTIMA LAB | Experimental UI & Motion Playground",
+    description: "A digital playground for interfaces, motion, and experiments by OPTIMA.",
+    images: ["/Optimaai_logo.png"],
+  },
+  alternates: {
+    canonical: "https://lab.optimaai.eu",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

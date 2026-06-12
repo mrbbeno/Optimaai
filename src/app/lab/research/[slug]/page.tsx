@@ -3,6 +3,60 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, XCircle, Target, ArrowRight } from "lucide-react";
 import { researchArticles } from "@/lib/researchData";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+// SEO: Dinamikus metadata generálás minden research cikkhez
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const article = researchArticles.find((a) => a.slug === slug);
+
+  if (!article) {
+    return {
+      title: "Cikk nem található",
+    };
+  }
+
+  return {
+    title: article.title,
+    description: article.summary,
+    openGraph: {
+      title: article.title,
+      description: article.summary,
+      url: `https://lab.optimaai.eu/research/${article.slug}`,
+      siteName: "OPTIMA LAB",
+      type: "article",
+      locale: "hu_HU",
+      images: [
+        {
+          url: "/Optimaai_logo.png",
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.summary,
+      images: ["/Optimaai_logo.png"],
+    },
+    alternates: {
+      canonical: `https://lab.optimaai.eu/research/${article.slug}`,
+    },
+  };
+}
+
+// SEO: Pre-render minden research cikk URL-jét build time-ban — kritikus az indexeléshez
+export async function generateStaticParams() {
+  return researchArticles.map((article) => ({
+    slug: article.slug,
+  }));
+}
 
 export default async function ResearchArticlePage({ 
   params 

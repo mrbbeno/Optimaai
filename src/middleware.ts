@@ -7,6 +7,11 @@ export function middleware(req: NextRequest) {
 
   // Ha a kérés a lab.optimaai.eu-ra jön
   if (hostname === 'lab.optimaai.eu') {
+    // Google Site Verification fájl — NE írjuk át, szolgáljuk ki közvetlenül
+    if (url.pathname.startsWith('/google') && url.pathname.endsWith('.html')) {
+      return NextResponse.next();
+    }
+
     // Biztonsági ellenőrzés: ha az útvonal valamiért már tartalmazza a /lab-ot,
     // (pl. egy kódban maradt /lab/... link miatt), akkor redirecteljük a tiszta URL-re.
     if (url.pathname.startsWith('/lab')) {

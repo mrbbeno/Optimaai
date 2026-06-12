@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import BlobCursor from "@/components/lab/BlobCursor";
+import { LabNavbar } from "@/components/lab/LabNavbar";
 import { ExternalLink, ArrowDown } from "lucide-react";
 import TextPressure from "@/components/lab/TextPressure";
 import { researchArticles } from "@/lib/researchData";
@@ -34,26 +35,8 @@ export default function LabPage() {
   return (
     <>
       <BlobCursor />
-      {/* Floating Navbar */}
-      <div className="fixed top-6 left-0 right-0 z-50 flex justify-center w-full pointer-events-none">
-        <nav className="pointer-events-auto flex items-center gap-6 px-6 py-3 bg-white/70 backdrop-blur-md border border-neutral-200/50 shadow-sm rounded-full">
-          <Link href="/lab" className="font-sans font-medium text-[15px] tracking-tight hover:opacity-70 transition-opacity">
-            OPTIMA <span className="font-mono text-[10px] text-neutral-400 uppercase tracking-widest ml-1">LAB</span>
-          </Link>
-          <div className="h-4 w-px bg-neutral-200 hidden md:block" />
-          <div className="hidden md:flex items-center gap-5">
-            <a href="#featured" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light">Featured</a>
-            <a href="#clients" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light">Clients</a>
-            <a href="#tools" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light">Tools</a>
-            <a href="#experiments" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light">R&D</a>
-            <a href="#research" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light">Research</a>
-          </div>
-          <div className="h-4 w-px bg-neutral-200 hidden md:block" />
-          <a href="https://optimaai.eu" className="font-sans text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-mono flex items-center gap-1.5">
-            Agency Site <ExternalLink className="w-3 h-3" />
-          </a>
-        </nav>
-      </div>
+      {/* Navbar / Top bar */}
+      <LabNavbar />
 
       {/* Main Container */}
       <main className="w-full flex-grow flex flex-col pb-32">
@@ -72,6 +55,9 @@ export default function LabPage() {
               </span>
               <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
             </motion.div>
+
+            {/* SEO: Rejtett h1 tag a crawlerek számára — a TextPressure canvas-t nem látják */}
+            <h1 className="sr-only">OPTIMA LAB — Experimental UI & Motion Playground by Optimaai</h1>
 
             <motion.div variants={fadeInUp} className="w-full h-[100px] sm:h-[160px] relative mt-4">
               <TextPressure 
@@ -364,15 +350,15 @@ export default function LabPage() {
             <a href="mailto:info@optimaai.eu" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
               info@optimaai.eu
             </a>
-            <Link href="/" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
+            <a href="https://optimaai.eu" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
               Main Agency
-            </Link>
-            <Link href="/adatvedelem" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
+            </a>
+            <a href="https://optimaai.eu/adatvedelem" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
               Privacy Policy
-            </Link>
-            <Link href="/aszf" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
+            </a>
+            <a href="https://optimaai.eu/aszf" className="font-sans text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors">
               Terms
-            </Link>
+            </a>
           </div>
         </div>
 
