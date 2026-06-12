@@ -9,9 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/adatvedelem/', '/aszf/', '/lab/'],
       },
     ],
-    sitemap: [
-      'https://optimaai.eu/sitemap/0.xml',
-      'https://lab.optimaai.eu/sitemap/0.xml',
-    ],
+    sitemap: 'https://optimaai.eu/sitemap.xml',
   }
 }
