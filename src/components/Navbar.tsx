@@ -6,154 +6,88 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Szolgáltatások", href: "/szolgaltatasok" },
-  { name: "Munkáink", href: "/munkak" },
-  { name: "Folyamat", href: "/folyamat" },
-  { name: "Optima Lab", href: "https://lab.optimaai.eu" },
+  { name: "Szolgáltatások", href: "/#szolgaltatasok" },
+  { name: "Referenciák", href: "/#referenciak" },
+  { name: "Folyamat", href: "/#folyamat" },
   { name: "Kapcsolat", href: "/kapcsolat" },
 ];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // ESC billentyűre bezár
-  useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMenuOpen(false);
+      if (e.key === "Escape") setMenuOpen(false);
     };
-    document.addEventListener('keydown', handleEsc);
-    return () => document.removeEventListener('keydown', handleEsc);
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
   }, []);
-
-  // Scroll lock amíg nyitva van
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [menuOpen]);
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-[1000] h-16 w-full transition-all duration-300 px-6 md:px-[64px]",
-        (isScrolled || menuOpen)
-          ? "bg-[#080809] border-b border-border" 
-          : "bg-transparent border-b border-transparent"
-      )}
-    >
-      <div className="mx-auto flex h-full max-w-[1440px] items-center justify-between">
-        {/* Left: Brand */}
-        <Link 
-          href="/" 
-          className="font-mono text-[13px] font-medium tracking-[0.2em] text-white"
-          onClick={() => setMenuOpen(false)}
-        >
-          OPTIMAAI
-        </Link>
-
-        {/* Center: Desktop Navigation */}
-        <div className="hidden items-center md:flex">
-          {navLinks.map((link, idx) => (
-            <div key={link.name} className="flex items-center">
-              <Link
-                href={link.href}
-                className="font-ui text-[13px] text-secondary transition-colors duration-150 hover:text-primary"
-              >
-                {link.name}
-              </Link>
-              {idx < navLinks.length - 1 && (
-                <span className="mx-4 text-tertiary text-[13px]">·</span>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Right: CTA */}
-        <div className="flex items-center gap-6">
-          <Link href="/kapcsolat" className="border border-accent text-accent font-ui text-[13px] font-[400] px-5 py-2 rounded-[4px] hidden md:flex items-center gap-2 hover:bg-accent hover:text-bg transition-all">
-            Írj nekünk →
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] md:w-auto">
+      <nav
+        className={cn(
+          "flex flex-col md:flex-row md:items-center bg-white/70 backdrop-blur-md border border-black/5 px-6 py-3 shadow-sm transition-all duration-300 ease-in-out overflow-hidden rounded-3xl md:rounded-full",
+          menuOpen ? "max-h-[400px] rounded-3xl" : "max-h-[48px]"
+        )}
+      >
+        <div className="flex items-center justify-between w-full md:w-auto h-[24px]">
+          <Link
+            href="/"
+            className="font-mono text-[13px] font-medium tracking-[0.2em] text-[#1D1D1F]"
+            onClick={() => setMenuOpen(false)}
+          >
+            OPTIMA<span className="text-[#9CA3AF]">AI</span>
           </Link>
-
-          {/* Mobile Menu Toggle */}
           <button
-            className="text-white md:hidden relative z-[1002] p-2"
+            className="md:hidden text-neutral-600 focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle Menu"
           >
             {menuOpen ? (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
               </svg>
             ) : (
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12"></line>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <line x1="3" y1="18" x2="21" y2="18"></line>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 12v0M4 6v0M4 18v0M8 12h12M8 6h12M8 18h12" />
               </svg>
             )}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[1001] flex flex-col bg-[#080809] h-[100dvh]"
+        <div
+          className={cn(
+            "flex-col md:flex-row md:items-center gap-4 md:gap-6 mt-6 md:mt-0 md:ml-8 w-full md:w-auto",
+            menuOpen ? "flex" : "hidden md:flex"
+          )}
+        >
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="font-inter text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="h-px w-full md:h-4 md:w-px bg-black/10"></div>
+          <a
+            href="https://lab.optimaai.eu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-inter text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-medium flex items-center justify-center gap-1.5 w-full md:w-auto"
             onClick={() => setMenuOpen(false)}
           >
-            <div 
-              className="flex flex-col items-center justify-center h-full px-6 pt-16"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex flex-col w-full max-w-[400px]">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      className="font-display text-[36px] text-primary py-5 border-b border-border text-center block"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + navLinks.length * 0.05 }}
-                >
-                  <Link
-                    href="/kapcsolat"
-                    className="mt-12 text-accent border border-accent rounded-[4px] py-4 font-ui text-[15px] font-[400] text-center uppercase tracking-widest hover:bg-accent hover:text-bg transition-all block"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Írj nekünk →
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            Optima Lab
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
   );
 }

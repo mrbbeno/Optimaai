@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, IBM_Plex_Sans, IBM_Plex_Mono, Syne } from "next/font/google";
+import { Inter, IBM_Plex_Mono, Caveat, EB_Garamond, Dancing_Script } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-display",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
-});
-
-const plexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-ui",
+  variable: "--font-inter",
 });
 
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-mono",
+});
+
+const scriptFont = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-script",
+});
+
+const serifFont = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-serif",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dancing",
 });
 
 import { CookieConsentProvider } from "@/context/CookieConsentContext";
@@ -110,8 +114,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hu" suppressHydrationWarning className={`scroll-smooth ${instrumentSerif.variable} ${syne.variable} ${plexSans.variable} ${plexMono.variable}`}>
-      <body className="min-h-screen relative">
+    <html lang="hu" suppressHydrationWarning className={`scroll-smooth ${inter.variable} ${plexMono.variable} ${scriptFont.variable} ${serifFont.variable} ${dancingScript.variable}`}>
+      <body className="min-h-screen relative font-ui text-primary bg-bg antialiased">
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <LocalBusinessJsonLd />
