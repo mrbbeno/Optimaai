@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/adatvedelem/', '/aszf/', '/lab/'],
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://optimaai.eu/sitemap.xml',

@@ -1,8 +1,21 @@
-import { useEffect, useRef, memo } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 
 import './DotField.css';
 
 const TWO_PI = Math.PI * 2;
+
+export interface DotFieldProps extends React.HTMLAttributes<HTMLDivElement> {
+  dotRadius?: number;
+  dotSpacing?: number;
+  cursorRadius?: number;
+  cursorForce?: number;
+  bulgeOnly?: boolean;
+  bulgeStrength?: number;
+  sparkle?: boolean;
+  waveAmplitude?: number;
+  gradientFrom?: string;
+  gradientTo?: string;
+}
 
 const DotField = memo(({
   dotRadius = 1.5,
@@ -16,23 +29,24 @@ const DotField = memo(({
   gradientFrom = 'rgba(75, 85, 99, 0.6)', // Dark gray
   gradientTo = 'rgba(107, 114, 128, 0.4)', // Medium-dark gray
   ...rest
-}) => {
-  const canvasRef = useRef(null);
-  const dotsRef = useRef([]);
-  const mouseRef = useRef({ x: -9999, y: -9999, prevX: -9999, prevY: -9999, speed: 0 });
-  const rafRef = useRef(null);
-  const sizeRef = useRef({ w: 0, h: 0, offsetX: 0, offsetY: 0 });
+}: DotFieldProps) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const dotsRef = useRef<any[]>([]);
+  const mouseRef = useRef<any>({ x: -9999, y: -9999, prevX: -9999, prevY: -9999, speed: 0 });
+  const rafRef = useRef<any>(null);
+  const sizeRef = useRef<any>({ w: 0, h: 0, offsetX: 0, offsetY: 0 });
   const engagement = useRef(0);
-  const propsRef = useRef({});
+  const propsRef = useRef<any>({});
   propsRef.current = { dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo };
-  const rebuildRef = useRef(null);
+  const rebuildRef = useRef<any>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    let resizeTimer;
+    let resizeTimer: any;
 
     function resize() {
       clearTimeout(resizeTimer);
@@ -40,7 +54,9 @@ const DotField = memo(({
     }
 
     function doResize() {
-      const rect = canvas.parentElement.getBoundingClientRect();
+      if (!canvas || !ctx) return;
+      const rect = canvas.parentElement?.getBoundingClientRect();
+      if (!rect) return;
       const w = rect.width;
       const h = rect.height;
 
@@ -60,7 +76,7 @@ const DotField = memo(({
       buildDots(w, h);
     }
 
-    function buildDots(w, h) {
+    function buildDots(w: number, h: number) {
       const p = propsRef.current;
       const step = p.dotRadius + p.dotSpacing;
       const cols = Math.floor(w / step);
@@ -80,7 +96,7 @@ const DotField = memo(({
       dotsRef.current = dots;
     }
 
-    function onMouseMove(e) {
+    function onMouseMove(e: any) {
       const s = sizeRef.current;
       mouseRef.current.x = e.pageX - s.offsetX;
       mouseRef.current.y = e.pageY - s.offsetY;
@@ -102,6 +118,7 @@ const DotField = memo(({
     let frameCount = 0;
 
     function tick() {
+      if (!ctx) return;
       frameCount++;
       const dots = dotsRef.current;
       const m = mouseRef.current;
