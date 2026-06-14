@@ -71,6 +71,12 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (currentStep < 4) {
+      nextStep();
+      return;
+    }
+    
     if (!validateStep(4)) return;
 
     setStatus("sending");
