@@ -69,14 +69,7 @@ export default function ContactPage() {
     setCurrentStep(prev => prev - 1);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (currentStep < 4) {
-      nextStep();
-      return;
-    }
-    
+  const submitForm = async () => {
     if (!validateStep(4)) return;
 
     setStatus("sending");
@@ -230,7 +223,7 @@ export default function ContactPage() {
                           </div>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+                        <form onSubmit={(e) => { e.preventDefault(); if (currentStep < 4) nextStep(); }} className="flex-1 flex flex-col">
                           <AnimatePresence mode="wait" custom={direction} initial={false}>
                             <motion.div
                               key={currentStep}
@@ -455,8 +448,8 @@ export default function ContactPage() {
                             ) : <div />}
                             
                             <button
-                              type={currentStep === 4 ? "submit" : "button"}
-                              onClick={currentStep === 4 ? undefined : nextStep}
+                              type="button"
+                              onClick={currentStep === 4 ? submitForm : nextStep}
                               disabled={!isStepValid(currentStep) || status === "sending"}
                               className={cn(
                                 "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2",

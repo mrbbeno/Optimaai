@@ -2,8 +2,6 @@ import Link from "next/link";
 
 const footerLinks = [
   { name: "Főoldal", href: "/" },
-  { name: "Szolgáltatások", href: "/szolgaltatasok" },
-  { name: "Munkáink", href: "/munkak" },
   { name: "Optima Lab", href: "https://lab.optimaai.eu" },
   { name: "Kapcsolat", href: "/kapcsolat" },
 ];
