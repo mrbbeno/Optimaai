@@ -86,7 +86,7 @@ export default function Home() {
                 <Link href="/kapcsolat" className="btn-primary w-full sm:w-auto h-12 px-8 shadow-md hover:shadow-lg transition-all text-base">
                   Kezdjük el a munkát
                 </Link>
-                <Link href="#munkak" className="btn-outline w-full sm:w-auto h-12 px-8 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 text-base">
+                <Link href="#referenciak" className="btn-outline w-full sm:w-auto h-12 px-8 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 text-base">
                   Projektjeink
                 </Link>
               </motion.div>
