@@ -11,10 +11,13 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FAQ, { faqData } from "@/components/sections/faq";
+import FAQSchema from "@/components/faq-schema";
 
 export default function Home() {
   return (
     <>
+      <FAQSchema faqs={faqData} />
       <Navbar />
       <main className="flex flex-col min-h-screen bg-background relative overflow-hidden">
         
@@ -106,6 +109,8 @@ export default function Home() {
         <References />
 
         <Process />
+
+        <FAQ />
 
         {/* ══════════════════════════════════════════
             CTA — Shadcn Minimalist Black/White Block

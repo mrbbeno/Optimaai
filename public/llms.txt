@@ -1,28 +1,17 @@
-# OptimaAI - Weboldal Készítés & AI Automatizáció
+# OptimaAI — Weboldal Készítés & AI Automatizáció Budapest
 
-## Rólunk
-A **Budapest Digital Studio (OptimaAI)** egy magyarországi ügynökség, amely prémium kategóriás, egyedi fejlesztésű webes felületeket és mesterséges intelligencia (AI) alapú üzleti automatizációs rendszereket épít vállalatok számára. Nem sablonokat árulunk, hanem valódi, mérhető eredményeket hozó digitális infrastruktúrát.
+> Egyedi Next.js weboldalak és AI automatizációs rendszerek magyar KKV-knak.
+> Nem sablonokat adunk el — üzleti infrastruktúrát építünk.
 
-## Szolgáltatásaink
-1. **Prémium Weboldalak**: Gyors, reszponzív, Next.js és React alapú weboldalak, amelyek magas konverziós arányt biztosítanak.
-2. **AI & Automatizáció**: 24/7-ben működő AI-megoldások, automata ügyfélszolgálat, intelligens adatfeldolgozás (OpenAI & Claude integráció).
-3. **Üzleti Automatizációk**: CRM, naptár (pl. Calendly), számlázó (pl. Billingo) és email rendszerek összekötése és automatizálása API-kon keresztül.
+## Szolgáltatások
+- [Prémium weboldalak](https://optimaai.eu/#szolgaltatasok)
+- [AI & Automatizáció](https://optimaai.eu/#szolgaltatasok)
+- [Üzleti automatizációk](https://optimaai.eu/#szolgaltatasok)
 
-## Hogyan dolgozunk? (A Folyamat)
-1. **Ingyenes Konzultáció & Audit**: Megkeressük, hol veszít időt és pénzt a cég.
-2. **Személyre Szabott Demó**: Rövid, működő prototípust építünk még a szerződés előtt.
-3. **Élesítés & Támogatás**: Kulcsrakész átadás és folyamatos üzemeltetés, karbantartás.
-
-## Kiemelt Referenciáink
-- **gostaydirect.eu**: Közvetlen B2C szállásfoglaló katalógus nagy jutalékok nélkül (Next.js, Supabase).
-- **sarhegyipanorama.hu**: Egyedi webes felület egy gyöngyösi ingatlanberuházás prezentálására.
+## Referenciák
+- [GoStayDirect](https://gostaydirect.eu) — közvetlen Balaton foglalási platform
+- [Sár-hegyi Panoráma](https://sarhegyipanorama.hu) — egyedi ingatlan bemutató oldal
 
 ## Kapcsolat
-- **Weboldal**: https://optimaai.eu
-- **Email**: info@optimaai.eu
-- **Ajánlatkérés**: https://optimaai.eu/kapcsolat
-
-## Technológiai Stack
-- Frontend: Next.js, React, Tailwind CSS, Framer Motion
-- AI & Backend: OpenAI, Supabase, Vercel
-- Design: Letisztult, "Shadcn UI" stílus, modern tipográfia és mikroanimációk.
+- [Ingyenes konzultáció](https://optimaai.eu/kapcsolat)
+- Email: info@optimaai.eu

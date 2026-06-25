@@ -37,7 +37,6 @@ import GoogleAnalyticsWrapper from "@/components/GoogleAnalyticsWrapper";
 import {
   OrganizationJsonLd,
   WebSiteJsonLd,
-  LocalBusinessJsonLd,
 } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
@@ -115,10 +114,39 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hu" suppressHydrationWarning className={`scroll-smooth ${inter.variable} ${plexMono.variable} ${scriptFont.variable} ${serifFont.variable} ${dancingScript.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "OptimaAI",
+              url: "https://optimaai.eu",
+              email: "info@optimaai.eu",
+              logo: "https://optimaai.eu/Optimaai_logo.png",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Budapest",
+                addressCountry: "HU",
+              },
+              description:
+                "Egyedi weboldal készítés és AI automatizáció vállalkozásoknak Budapesten. Nem sablonból dolgozunk — minden projektet az üzleti céljaidhoz tervezünk.",
+              areaServed: "HU",
+              serviceType: [
+                "Weboldal készítés",
+                "AI automatizáció",
+                "Next.js fejlesztés",
+                "Landing oldal készítés",
+              ],
+              sameAs: ["https://optimaai.eu"],
+            }),
+          }}
+        />
+      </head>
       <body className="min-h-screen relative font-ui text-primary bg-bg antialiased">
         <OrganizationJsonLd />
         <WebSiteJsonLd />
-        <LocalBusinessJsonLd />
         <CookieConsentProvider>
           <GoogleAnalyticsWrapper />
           <CookieBanner />
