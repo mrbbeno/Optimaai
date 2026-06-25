@@ -1,18 +1,33 @@
 import { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
 import { researchArticles } from '@/lib/researchData'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const headersList = await headers()
+  const host = headersList.get('host') || 'optimaai.eu'
+  const isLab = host.includes('lab.optimaai.eu')
+
+  if (isLab) {
+    const labUrl = 'https://lab.optimaai.eu'
+    const researchUrls: MetadataRoute.Sitemap = researchArticles.map((article) => ({
+      url: `${labUrl}/research/${article.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    }))
+
+    return [
+      {
+        url: labUrl,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 1.0,
+      },
+      ...researchUrls,
+    ]
+  }
+
   const baseUrl = 'https://optimaai.eu'
-  const labUrl = 'https://lab.optimaai.eu'
-
-  // Research cikkek URL-jei a lab subdomainhez
-  const researchUrls: MetadataRoute.Sitemap = researchArticles.map((article) => ({
-    url: `${labUrl}/research/${article.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
-
   return [
     {
       url: baseUrl,
@@ -26,14 +41,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    // — Lab subdomain oldalak —
     {
-      url: labUrl,
+      url: `${baseUrl}/aszf`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'yearly',
+      priority: 0.5,
     },
-    // Lab research cikkek
-    ...researchUrls,
+    {
+      url: `${baseUrl}/adatvedelem`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ]
 }

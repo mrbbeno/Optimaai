@@ -125,6 +125,8 @@ export default function RootLayout({
               url: "https://optimaai.eu",
               email: "info@optimaai.eu",
               logo: "https://optimaai.eu/Optimaai_logo.png",
+              image: "https://optimaai.eu/Optimaai_logo.png",
+              priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Budapest",
