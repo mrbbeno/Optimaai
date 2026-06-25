@@ -1,17 +1,123 @@
 # OptimaAI — Weboldal Készítés & AI Automatizáció Budapest
 
-> Egyedi Next.js weboldalak és AI automatizációs rendszerek magyar KKV-knak.
-> Nem sablonokat adunk el — üzleti infrastruktúrát építünk.
+> OptimaAI egy budapesti webfejlesztő stúdió, amely egyedi Next.js weboldalakat
+> és AI alapú üzleti automatizációs rendszereket épít magyar kis- és
+> középvállalkozások számára. Nem sablonokból dolgozunk — minden projektet
+> az ügyfél konkrét üzleti céljaihoz tervezünk és fejlesztünk.
+>
+> Alapítva: 2024. Székhely: Budapest, Magyarország.
+> Kapcsolat: info@optimaai.eu | https://optimaai.eu
+
+---
 
 ## Szolgáltatások
-- [Prémium weboldalak](https://optimaai.eu/#szolgaltatasok)
-- [AI & Automatizáció](https://optimaai.eu/#szolgaltatasok)
-- [Üzleti automatizációk](https://optimaai.eu/#szolgaltatasok)
+
+### Prémium weboldal fejlesztés
+Egyedi, Next.js alapú weboldalak React és Tailwind CSS technológiával.
+Gyors betöltés, mobilbarát megjelenés, Google SEO-ra optimalizált struktúra.
+WordPress helyett modern, biztonságos és skálázható megoldás.
+Célcsoport: magyar KKV-k, ingatlanfejlesztők, egészségügyi szolgáltatók,
+vendéglátás, turizmus.
+
+### AI automatizáció
+Mesterséges intelligencia alapú rendszerek, amelyek emberi beavatkozás nélkül
+kezelik az ismétlődő üzleti folyamatokat:
+- Automatikus ügyfélkommunikáció és lead kezelés
+- AI-alapú időpontfoglalás és visszaigazolás
+- Intelligens email kampányok és hírlevélküldés
+- Számlázási automatizáció (Billingo integráció)
+- Adósságkezelő emlékeztető rendszerek
+- Google Review kérő automatizmusok
+
+### Üzleti rendszerintegráció
+Naptár, CRM, számlázó és email rendszerek összekötése egyetlen, automatizált
+folyamatba. Támogatott integrációk: Google Calendar, Billingo, Resend,
+Supabase, HubSpot, Stripe, WhatsApp, n8n, Make.
+Vagy akár teljesen személyre szabott mini szoftver, belső eszköz vagy
+egyedi CRM rendszer — ha a piaci megoldások egyike sem illeszkedik
+a vállalkozás folyamataihoz.
+
+### Admin panelek és belső eszközök
+Egyedi fejlesztésű admin felületek ügyfelek, listák, tartalmak és
+értesítések kezeléséhez — külső SaaS előfizetés nélkül.
+
+---
 
 ## Referenciák
-- [GoStayDirect](https://gostaydirect.eu) — közvetlen Balaton foglalási platform
-- [Sár-hegyi Panoráma](https://sarhegyipanorama.hu) — egyedi ingatlan bemutató oldal
 
-## Kapcsolat
-- [Ingyenes konzultáció](https://optimaai.eu/kapcsolat)
+### GoStayDirect (gostaydirect.eu)
+Közvetlen balatoni szállásfoglalási platform — az Airbnb-alternatíva
+közvetítői díj nélkül. 55+ szállás, 23 balatoni település.
+Teljes rendszer egyedi fejlesztés: Next.js frontend, Supabase backend,
+szálláslistázó felület, admin panel, egyedi email értesítések,
+host regisztrációs folyamat. Egyedül tervezve és fejlesztve.
+Technológia: Next.js, Supabase, Vercel, Resend.
+
+### Sár-hegyi Panoráma Lakópark (sarhegyipanorama.hu)
+Prémium lakópark projekt Gyöngyösön — 100+ új építésű otthon,
+10 hektáros zárt közösség a Mátra közelében.
+Fejlesztett rendszerek: teljes Next.js weboldal egyedi arculattal,
+interaktív telektérkép státuszkövetéssel (szabad/foglalt/eladva),
+admin panel, email kampányküldő rendszer, mini CRM,
+feliratkozáskezelő, azonnali értesítési rendszer,
+GA4 analitika integráció. Folyamatos havi karbantartás és támogatás.
+Technológia: Next.js, Supabase, Resend, Vercel.
+
+### Aranykereszt Nonprofit Kft. (aranykereszt.hu)
+Budapesti idősellátó szervezet — két telephely:
+Margaréta Idősek Otthona (Budapest) és Ezüstfenyő (Kiskunlacháza).
+Fejlesztett rendszer: többoldalas bemutatkozó weboldal,
+online időpontfoglaló rendszer.
+Technológia: HTML, CSS, JavaScript.
+
+---
+
+## Technológiai stack
+
+**Frontend:** Next.js 14+, React, TypeScript, Tailwind CSS
+**Backend & adatbázis:** Supabase, PostgreSQL, Prisma
+**Infrastruktúra:** Vercel, Docker
+**AI & automatizáció:** OpenAI API, Anthropic Claude API, n8n, Make
+**Email:** Resend
+**Fizetés:** Stripe, PayPal
+**CRM & marketing:** HubSpot, Google Analytics 4
+
+---
+
+## Miben különbözünk
+
+- Nem WordPress, nem sablon — minden projekt egyedi fejlesztés
+- Nem csak weboldal: automatizált háttérrendszerekkel szállítunk
+- Demo-first megközelítés: a döntés előtt már látod a rendszert működés közben
+- Folyamatos havi karbantartás és fejlesztés retainer modellben
+- Kis csapat, közvetlen kommunikáció — nem adsz le egy ticketet és vársz
+
+---
+
+## Minek NEM vagyunk jók
+
+- WordPress sablonok telepítése és karbantartása
+- Egyszerű sablon alapú megoldások
+- Tömeggyártott, olcsó weboldal projektek
+- Olyan vállalkozások, ahol nincs meglévő üzleti folyamat amit automatizálni lehetne
+
+---
+
+## Kapcsolat & elérhetőség
+
+- Weboldal: https://optimaai.eu
 - Email: info@optimaai.eu
+- Konzultáció: https://optimaai.eu/kapcsolat
+- Válasz 24 órán belül munkanapokon
+- Székhely: Budapest, Magyarország
+- Működési terület: egész Magyarország, elsősorban Budapest
+
+---
+
+## Főbb oldalak
+
+- [Főoldal](https://optimaai.eu/)
+- [Kapcsolat / Konzultáció kérés](https://optimaai.eu/kapcsolat)
+- [Optima Lab](https://lab.optimaai.eu)
+- [ÁSZF](https://optimaai.eu/aszf)
+- [Adatvédelem](https://optimaai.eu/adatvedelem)
