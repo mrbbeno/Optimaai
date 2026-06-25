@@ -53,15 +53,14 @@ export default function LabPage() {
               <span className="font-mono text-[11px] text-neutral-400 uppercase tracking-widest">
                 — DIGITAL ART GALLERY v2.0
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]" />
             </motion.div>
 
             {/* SEO: Rejtett h1 tag a crawlerek számára — a TextPressure canvas-t nem látják */}
-            <h1 className="sr-only">OPTIMA LAB — Experimental UI & Motion Playground by Optimaai</h1>
+            <h1 className="sr-only">OPTIMAAI LAB — Experimental UI & Motion Playground by Optimaai</h1>
 
             <motion.div variants={fadeInUp} className="w-full h-[100px] sm:h-[160px] relative mt-4">
               <TextPressure 
-                text="OPTIMA LAB" 
+                text="OPTIMAAI LAB" 
                 textColor="#1D1D1F" 
                 flex={true} 
                 alpha={false} 

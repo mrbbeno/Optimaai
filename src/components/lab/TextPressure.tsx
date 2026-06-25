@@ -1,6 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
+import { Roboto_Flex } from "next/font/google";
+
+const robotoFlex = Roboto_Flex({
+  subsets: ["latin"],
+  axes: ["wdth", "wght"],
+  display: "swap",
+});
 
 const dist = (a: { x: number; y: number }, b: { x: number; y: number }) => {
   const dx = b.x - a.x;
@@ -44,7 +51,7 @@ interface TextPressureProps {
 export default function TextPressure({
   text = "Compressa",
   fontFamily = "Compressa VF",
-  fontUrl = "https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2",
+  fontUrl = "",
   width = true,
   weight = true,
   italic = true,
@@ -152,12 +159,12 @@ export default function TextPressure({
 
           const d = dist(mouseRef.current, charCenter);
 
-          const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
+          const wdth = width ? Math.floor(getAttr(d, maxDist, 25, 151)) : 100;
           const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
           const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : "0";
           const alphaVal = alpha ? getAttr(d, maxDist, 0, 1).toFixed(2) : "1";
 
-          const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
+          const newFontVariationSettings = `'wght' ${wght}, 'wdth' ${wdth}, 'slnt' ${italVal === "1" ? -10 : 0}`;
 
           if (span.style.fontVariationSettings !== newFontVariationSettings) {
             span.style.fontVariationSettings = newFontVariationSettings;
@@ -178,12 +185,6 @@ export default function TextPressure({
   const styleElement = useMemo(() => {
     return (
       <style>{`
-        @font-face {
-          font-family: '${fontFamily}';
-          src: url('${fontUrl}');
-          font-style: normal;
-        }
-
         .flex-pressure {
           display: flex;
           justify-content: space-between;
@@ -226,9 +227,8 @@ export default function TextPressure({
       {styleElement}
       <h1
         ref={titleRef}
-        className={`text-pressure-title ${dynamicClassName}`}
+        className={`text-pressure-title ${dynamicClassName} ${robotoFlex.className}`}
         style={{
-          fontFamily,
           textTransform: "uppercase",
           fontSize: fontSize,
           lineHeight,

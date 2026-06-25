@@ -18,15 +18,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "OPTIMA LAB | Experimental UI & Motion Playground",
-    template: "%s | OPTIMA LAB",
+    default: "OPTIMAAI LAB | Experimental UI & Motion Playground",
+    template: "%s | OPTIMAAI LAB",
   },
-  description: "A digital playground for interfaces, motion, and experiments by OPTIMA. Apple-level minimalism meets playful motion design.",
+  description: "A digital playground for interfaces, motion, and experiments by Optimaai. Apple-level minimalism meets playful motion design.",
+  keywords: ["optimaai", "optima ai", "optimaai lab", "optima lab", "experimental UI", "motion playground", "react animations", "web development"],
   openGraph: {
-    title: "OPTIMA LAB | Experimental UI & Motion Playground",
-    description: "A digital playground for interfaces, motion, and experiments by OPTIMA.",
+    title: "OPTIMAAI LAB | Experimental UI & Motion Playground",
+    description: "A digital playground for interfaces, motion, and experiments by Optimaai.",
     url: "https://lab.optimaai.eu",
-    siteName: "OPTIMA LAB",
+    siteName: "OPTIMAAI LAB",
     locale: "hu_HU",
     type: "website",
     images: [
@@ -34,14 +35,14 @@ export const metadata: Metadata = {
         url: "/Optimaai_logo.png",
         width: 1200,
         height: 630,
-        alt: "OPTIMA LAB — Experimental UI & Motion Playground",
+        alt: "OPTIMAAI LAB — Experimental UI & Motion Playground",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "OPTIMA LAB | Experimental UI & Motion Playground",
-    description: "A digital playground for interfaces, motion, and experiments by OPTIMA.",
+    title: "OPTIMAAI LAB | Experimental UI & Motion Playground",
+    description: "A digital playground for interfaces, motion, and experiments by Optimaai.",
     images: ["/Optimaai_logo.png"],
   },
   alternates: {
