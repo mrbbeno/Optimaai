@@ -5,6 +5,7 @@ export default function CueStructuredData() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Cue by OptimaAI",
+    "image": "https://optimaai.eu/Optimaai_logo.png",
     "description": "Get async web development delivered in 48 hours. One request at a time, no meetings, no estimates. Next.js, React, Supabase, APIs. Pause or cancel anytime.",
     "brand": {
       "@type": "Brand",
