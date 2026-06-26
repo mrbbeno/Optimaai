@@ -22,7 +22,7 @@ function Navbar() {
         >
           <div className="absolute inset-0 bg-white group-hover:scale-105 transition-transform duration-500 ease-out"></div>
           <div className="relative px-5 py-2 font-[family-name:var(--font-geist)] font-bold text-[11px] md:text-[12px] text-black uppercase tracking-widest">
-            Initiate
+            Activate Cue
           </div>
         </button>
       </div>
@@ -185,18 +185,22 @@ function Scope() {
         </div>
         
         <div className="w-full lg:w-1/2 flex flex-wrap gap-4 content-start">
-          {tags.map((tag, i) => (
-            <motion.div 
-              key={i} 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="bg-white/[0.03] border border-white/10 rounded-full px-5 py-3 font-[family-name:var(--font-geist-mono)] text-[12px] text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-default"
-            >
-              {tag}
-            </motion.div>
-          ))}
+          {tags.map((tag, i) => {
+            const rot = [1, -1.5, 0.5, -1, 1.5, -0.5, 1, -1.5, 2, -1, 0.5, -2, 1.5, -0.5, 1][i % 15];
+            return (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, scale: 0.9, rotate: rot - 10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: rot }}
+                whileHover={{ scale: 1.05, rotate: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                viewport={{ once: true, margin: "-50px" }}
+                className="bg-white/[0.03] border border-white/10 rounded-full px-5 py-3 font-[family-name:var(--font-geist-mono)] text-[12px] text-white/60 hover:text-white hover:bg-white/10 transition-colors cursor-default"
+              >
+                {tag}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -292,19 +296,29 @@ function Pricing() {
   );
 }
 
-function FAQItem({ q, a }: { q: string, a: string }) {
+function FAQItem({ q, a, index }: { q: string, a: string, index: number }) {
   const [isOpen, setIsOpen] = useState(false);
+  const num = index.toString().padStart(2, '0');
   
   return (
-    <div className="border-b border-white/10">
+    <div className="border-b border-white/10 group relative">
+      {/* Subtle background reveal on hover */}
+      <div className="absolute inset-0 bg-white/[0.02] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom pointer-events-none"></div>
+      
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-8 text-left flex justify-between items-center group"
+        className="w-full py-6 md:py-8 text-left flex flex-col md:flex-row md:items-center relative z-10"
       >
-        <span className="font-[family-name:var(--font-geist)] font-bold text-[18px] md:text-[24px] text-white/70 group-hover:text-white transition-colors">
+        <span className="font-[family-name:var(--font-geist-mono)] text-[12px] md:text-[14px] text-white/30 mb-2 md:mb-0 md:w-32 transition-colors duration-500 group-hover:text-white">
+          {num}
+        </span>
+        <span className="font-[family-name:var(--font-geist)] font-black text-[24px] md:text-[40px] text-white/70 group-hover:text-white transition-all duration-500 ease-out group-hover:translate-x-2 md:group-hover:translate-x-6 flex-1 pr-12 md:pr-0">
           {q}
         </span>
-        <span className="font-[family-name:var(--font-geist)] text-[32px] text-white/30 group-hover:text-white transition-colors" style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)'}}>
+        <span 
+          className="font-[family-name:var(--font-geist)] text-[32px] md:text-[48px] text-white/30 group-hover:text-white transition-all duration-700 ease-[0.16,1,0.3,1] absolute right-2 top-4 md:top-auto md:relative md:right-0" 
+          style={{ transform: isOpen ? 'rotate(135deg)' : 'rotate(0deg)'}}
+        >
           +
         </span>
       </button>
@@ -314,12 +328,15 @@ function FAQItem({ q, a }: { q: string, a: string }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden"
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden relative z-10"
           >
-            <p className="font-[family-name:var(--font-geist-mono)] text-[14px] md:text-[16px] text-white/40 pb-8 max-w-3xl leading-relaxed">
-              {a}
-            </p>
+            <div className="flex flex-col md:flex-row pb-12">
+              <div className="hidden md:block w-32"></div>
+              <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[20px] text-white/50 max-w-3xl leading-relaxed">
+                {a}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -368,7 +385,7 @@ function FAQ() {
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <FAQItem q={faq.q} a={faq.a} />
+              <FAQItem q={faq.q} a={faq.a} index={i + 1} />
             </motion.div>
           ))}
         </div>

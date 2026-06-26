@@ -44,10 +44,10 @@ export default function InitiatePage() {
           className="max-w-2xl text-center"
         >
           <h1 className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[100px] text-white tracking-tighter leading-none mb-6 md:mb-8">
-            INITIATED.
+            ACTIVATED.
           </h1>
           <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[20px] text-white/50 mb-12 max-w-lg mx-auto leading-relaxed">
-            CUE activation initiated. Please check your inbox for the onboarding link and next steps.
+            Your request has been received. Please check your inbox for the onboarding link and next steps.
           </p>
           <a 
             href="/cue"

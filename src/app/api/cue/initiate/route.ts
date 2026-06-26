@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     // 2. Send Awwwards-style confirmation to the client
     const clientHtml = `
       <div style="background-color: #030303; color: #ffffff; padding: 60px 40px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #333333;">
-        <h1 style="font-size: 48px; font-weight: 900; letter-spacing: -2px; margin-bottom: 20px; line-height: 1;">INITIATED.</h1>
+        <h1 style="font-size: 48px; font-weight: 900; letter-spacing: -2px; margin-bottom: 20px; line-height: 1;">ACTIVATED.</h1>
         <p style="color: #888888; font-size: 16px; font-family: monospace; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px;">Subscription Request Received</p>
         
         <p style="font-size: 18px; line-height: 1.6; color: #dddddd; margin-bottom: 20px;">
@@ -61,7 +61,7 @@ export async function POST(req: Request) {
     const clientEmail = await resend.emails.send({
       from: "CUE by OptimaAI <info@optimaai.eu>",
       to: [email],
-      subject: "CUE: Subscription Initiated",
+      subject: "CUE: Activation Started",
       html: clientHtml,
     });
 
