@@ -7,20 +7,27 @@ export function middleware(req: NextRequest) {
 
   // Ha a kérés a lab.optimaai.eu-ra jön
   if (hostname === 'lab.optimaai.eu') {
-    // Google Site Verification fájl — NE írjuk át, szolgáljuk ki közvetlenül
     if (url.pathname.startsWith('/google') && url.pathname.endsWith('.html')) {
       return NextResponse.next();
     }
-
-    // Biztonsági ellenőrzés: ha az útvonal valamiért már tartalmazza a /lab-ot,
-    // (pl. egy kódban maradt /lab/... link miatt), akkor redirecteljük a tiszta URL-re.
     if (url.pathname.startsWith('/lab')) {
       url.pathname = url.pathname.replace(/^\/lab/, '') || '/';
       return NextResponse.redirect(url);
     }
-    
-    // A háttérben átdobjuk a kérést a /lab almappára
     url.pathname = `/lab${url.pathname === '/' ? '' : url.pathname}`;
+    return NextResponse.rewrite(url);
+  }
+
+  // Ha a kérés a cue.optimaai.eu-ra jön
+  if (hostname === 'cue.optimaai.eu') {
+    if (url.pathname.startsWith('/google') && url.pathname.endsWith('.html')) {
+      return NextResponse.next();
+    }
+    if (url.pathname.startsWith('/cue')) {
+      url.pathname = url.pathname.replace(/^\/cue/, '') || '/';
+      return NextResponse.redirect(url);
+    }
+    url.pathname = `/cue${url.pathname === '/' ? '' : url.pathname}`;
     return NextResponse.rewrite(url);
   }
 
