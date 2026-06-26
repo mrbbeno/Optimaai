@@ -17,7 +17,7 @@ function Navbar() {
           <span className="font-[family-name:var(--font-geist)] font-medium text-[10px] md:text-[12px] text-white/50 tracking-widest uppercase">by OPTIMAAI</span>
         </div>
         <button 
-          onClick={() => window.location.href = "mailto:hello@optimaai.eu"}
+          onClick={() => window.location.href = "/cue/initiate"}
           className="relative group overflow-hidden rounded-full"
         >
           <div className="absolute inset-0 bg-white group-hover:scale-105 transition-transform duration-500 ease-out"></div>
@@ -277,10 +277,10 @@ function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: "-50px" }}
-            onClick={() => window.location.href = "mailto:hello@optimaai.eu"}
+            onClick={() => window.location.href = "/cue/initiate"}
             className="w-full bg-white text-black hover:bg-gray-200 transition-colors py-6 font-[family-name:var(--font-geist)] font-black text-[16px] tracking-widest uppercase flex items-center justify-center gap-4 rounded-[25px]"
           >
-            Join the Queue
+            Activate Cue
           </motion.button>
         </div>
 
@@ -390,7 +390,7 @@ function CTA() {
           STOP WAITING.
         </h2>
         <button 
-          onClick={() => window.location.href = "mailto:hello@optimaai.eu"}
+          onClick={() => window.location.href = "/cue/initiate"}
           className="bg-black text-white px-10 py-5 rounded-full font-[family-name:var(--font-geist)] font-bold text-[18px] uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-2xl"
         >
           Initiate Subscription
