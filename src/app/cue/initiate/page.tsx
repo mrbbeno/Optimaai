@@ -47,7 +47,7 @@ export default function InitiatePage() {
             INITIATED.
           </h1>
           <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[20px] text-white/50 mb-12 max-w-lg mx-auto leading-relaxed">
-            Your request is in the queue. Check your email for next steps. We'll be in touch within 24 hours.
+            CUE activation initiated. Please check your inbox for the onboarding link and next steps.
           </p>
           <a 
             href="/cue"
