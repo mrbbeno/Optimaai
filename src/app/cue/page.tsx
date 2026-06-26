@@ -120,8 +120,11 @@ function StickyProcess() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: "-100px" }}
-            className="sticky w-full"
-            style={{ top: `calc(25vh + ${i * 20}px)` }}
+            className="sticky w-full top-[calc(25vh+var(--stack-mobile))] md:top-[calc(36vh+var(--stack-desktop))]"
+            style={{ 
+              "--stack-mobile": `${i * 20}px`,
+              "--stack-desktop": `${i * 40}px` 
+            } as React.CSSProperties}
           >
             {/* The Card */}
             <div className="bg-[#050505] border border-white/10 rounded-[24px] md:rounded-[32px] p-6 md:p-16 shadow-[0_-20px_40px_rgba(0,0,0,0.8)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-10 overflow-hidden relative">
