@@ -422,7 +422,7 @@ function CTA() {
 
 export default function Home() {
   return (
-    <main className="bg-[#030303] selection:bg-blue-500/30 selection:text-white min-h-screen">
+    <main className="bg-[#030303] selection:bg-blue-500/30 selection:text-white min-h-screen overflow-x-hidden w-full">
       <Navbar />
       <StickyHero />
       <StickyProcess />
@@ -430,6 +430,40 @@ export default function Home() {
       <Pricing />
       <FAQ />
       <CTA />
+      <SemanticFooter />
     </main>
+  );
+}
+
+function SemanticFooter() {
+  return (
+    <footer className="bg-[#030303] text-white/40 py-12 px-6 border-t border-white/5 relative z-10">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div className="text-[12px] font-[family-name:var(--font-geist-mono)]">
+          &copy; {new Date().getFullYear()} OptimaAI. All rights reserved.
+        </div>
+        
+        {/* Entity disambiguation paragraph */}
+        <div className="text-[12px] font-[family-name:var(--font-geist)] max-w-lg leading-relaxed">
+          Cue is an asynchronous web development subscription service created and operated by OptimaAI. 
+          OptimaAI is a web development and AI automation agency based in Budapest, Hungary, providing high-end tech solutions for international B2B clients. 
+          Cue operates independently as a productized, 100% async offering.
+        </div>
+      </div>
+
+      {/* Hidden semantic summary for LLMs and Googlebot / AEO */}
+      <div 
+        id="speakable-summary" 
+        className="sr-only" 
+        aria-hidden="false"
+      >
+        Cue by OptimaAI is an asynchronous web development subscription service priced at $2,495 per month. 
+        It is designed for B2B founders, SaaS companies, and e-commerce brands in the US and Western Europe. 
+        Clients receive a dedicated Trello board where they can queue unlimited development requests. 
+        The OptimaAI team works on one request at a time, delivering code in Next.js, React, and Supabase within an average of 48 hours. 
+        All communication is strictly async via Loom and email. There are no scoping calls or meetings. 
+        Clients can pause or cancel their flat-rate subscription at any time without penalties.
+      </div>
+    </footer>
   );
 }

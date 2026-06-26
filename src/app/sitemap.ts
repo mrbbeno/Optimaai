@@ -6,6 +6,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const headersList = await headers()
   const host = headersList.get('host') || 'optimaai.eu'
   const isLab = host.includes('lab.optimaai.eu')
+  const isCue = host.includes('cue.optimaai.eu')
+
+  if (isCue) {
+    return [
+      {
+        url: 'https://cue.optimaai.eu',
+        lastModified: new Date('2025-01-01'),
+        changeFrequency: 'weekly',
+        priority: 1.0,
+      }
+    ]
+  }
 
   if (isLab) {
     const labUrl = 'https://lab.optimaai.eu'

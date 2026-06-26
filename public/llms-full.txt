@@ -1,0 +1,97 @@
+# Cue by OptimaAI — Full Context
+
+Cue by OptimaAI is an asynchronous web development subscription service. It delivers high-quality React, Next.js, and Supabase development without meetings or estimates, operating strictly via an async pipeline with an average delivery time of 48 hours per request.
+
+## What Cue does
+Cue provides productized web development. Clients subscribe for a flat monthly fee ($2,495/mo) and can queue an unlimited number of development tasks. OptimaAI works through the queue one active request at a time, delivering code, UI components, API integrations, and bug fixes directly to the client's repository or staging environment.
+
+## Who it's for
+Cue is designed for English-speaking B2B founders, SaaS companies, and e-commerce brands in the US and Western Europe who need reliable, senior-level web development but want to avoid the overhead of hiring an agency, managing a freelancer, or paying an in-house developer salary.
+
+## How it works (Detailed Async Workflow)
+Our process is highly optimized to eliminate wasted time and bureaucratic drag.
+1. **Subscribe**: The client signs up for the $2,495/mo flat-fee subscription.
+2. **Onboarding**: A dedicated Trello board is created for the client within minutes.
+3. **Queue requests**: The client can immediately start adding development requests as Trello cards. There is no limit to how many cards can be added to the backlog.
+4. **Development begins**: We pull the topmost active request into the "In Progress" column and begin coding. No scoping calls, no estimation negotiations.
+5. **Delivery in 48h**: We push the completed feature or component to a staging environment or open a Pull Request. The average turnaround time is 48 hours.
+6. **Review & Revisions**: We record a quick Loom video walkthrough of what was built and attach it to the Trello card. The client reviews async. If they want changes, we revise until they are 100% satisfied. No extra cost.
+7. **Next task**: Once approved, the card moves to "Done," and we immediately start on the next active request.
+
+## Comparison
+How Cue differs from alternative web development hiring methods:
+
+### vs Freelancer
+- No availability uncertainty (we are always available).
+- Flat monthly rate instead of fluctuating hourly billing.
+- No scope creep or budget overruns.
+- 100% async communication — no scheduling conflicts.
+
+### vs Agency
+- No account managers acting as middlemen.
+- No bloated discovery processes or multi-week scoping phases.
+- Direct delivery to your repository.
+- Up to 10x faster due to our streamlined, async model.
+
+### vs In-House Developer
+- No $100k+ base salary to pay.
+- No benefits, equity, or severance to worry about.
+- Pause or cancel the subscription anytime if work dries up.
+- Senior-level output from day one.
+
+## Pricing
+- Flat fee: $2,495 per month.
+- No hidden fees, no hourly billing, no estimates.
+- **Pause feature**: Subscriptions can be paused at any time without penalty. Billing cycles are 31 days. If a client uses the service for 21 days and then pauses, they have 10 days of service remaining to use whenever they resume in the future.
+
+## Use Cases
+Here are 5 specific scenarios where Cue excels:
+1. **SaaS founder needs a new pricing page and Stripe checkout**: Submitted on Monday, the pricing page layout is delivered Tuesday, and the functional Stripe integration is delivered Wednesday.
+2. **E-commerce brand needs abandoned cart email flow with Resend**: Trello card submitted, React Email templates and Resend API logic delivered within 36 hours.
+3. **Startup needs Supabase auth flow with magic link**: Submitted, fully functional auth flow delivered in 48 hours.
+4. **Agency needs a client admin dashboard**: The project is broken into 3 smaller requests (Layout, Data fetching, Authentication), delivered sequentially over 6 days.
+5. **Solo founder needs API integration with third-party CRM**: Integration built and delivered async, complete with a Loom video explaining how to configure the environment variables.
+
+## What can be requested
+- Landing page sections
+- API integrations
+- Auth flows
+- Admin dashboards
+- Email templates
+- Performance fixes
+- Database schemas
+- Webhook setups
+- UI components
+- SEO fixes
+- Form logic
+- Cron jobs
+- Complex animations
+- Third-party integrations
+- Stripe integrations
+- Supabase setups
+
+## FAQ
+- **What counts as one request?** Any task a senior developer can complete in under 4 hours. Larger work gets broken into focused steps, each delivered within 48 hours.
+- **Do you do calls or meetings?** Never. All communication is async — via Trello, email, or Loom video. No exceptions.
+- **What if I'm not happy with the result?** We revise until it's right. No questions asked, no extra charges.
+- **What tech stack do you work with?** Primarily Next.js, React, TypeScript, Supabase, Vercel, REST APIs, and webhooks. Most JavaScript/TypeScript-based stacks are supported.
+- **Can I pause my subscription?** Yes. Pause anytime and resume when you're ready. No penalties, no fees.
+
+## Trust Signals
+- Infinite revisions: We don't stop working on a task until it's approved.
+- Staging-first delivery: You see the working code before you approve it.
+- Async guarantee: You will never be asked to jump on a "quick call."
+
+## Tech stack supported
+- Core: React, Next.js, TypeScript
+- Styling: Tailwind CSS, Framer Motion
+- Backend & DB: Supabase, Node.js, REST APIs
+- Infrastructure: Vercel
+
+## About OptimaAI
+OptimaAI is a web development and AI automation company based in Budapest, Hungary. Cue is a productized service offering created by the OptimaAI team to serve international clients with an asynchronous, high-speed development model.
+
+## Contact
+Email: hello@optimaai.eu
+Website: https://cue.optimaai.eu
+Parent Company: https://optimaai.eu

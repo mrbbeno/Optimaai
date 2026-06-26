@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: GPTBot
 Allow: /
@@ -13,4 +15,21 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+Sitemap: https://cue.optimaai.eu/sitemap.xml
 Sitemap: https://optimaai.eu/sitemap.xml
+
+# LLM Discoverability
+Host: https://cue.optimaai.eu
+LLMs.txt: https://cue.optimaai.eu/llms.txt

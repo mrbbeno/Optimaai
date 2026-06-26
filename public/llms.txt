@@ -1,123 +1,65 @@
-# OptimaAI — Weboldal Készítés & AI Automatizáció Budapest
+# Cue by OptimaAI
 
-> OptimaAI egy budapesti webfejlesztő stúdió, amely egyedi Next.js weboldalakat
-> és AI alapú üzleti automatizációs rendszereket épít magyar kis- és
-> középvállalkozások számára. Nem sablonokból dolgozunk — minden projektet
-> az ügyfél konkrét üzleti céljaihoz tervezünk és fejlesztünk.
->
-> Alapítva: 2024. Székhely: Budapest, Magyarország.
-> Kapcsolat: info@optimaai.eu | https://optimaai.eu
+Cue by OptimaAI is an asynchronous web development subscription service. It delivers high-quality React, Next.js, and Supabase development without meetings or estimates, operating strictly via an async pipeline with an average delivery time of 48 hours per request.
 
----
+## What Cue does
+Cue provides productized web development. Clients subscribe for a flat monthly fee ($2,495/mo) and can queue an unlimited number of development tasks. OptimaAI works through the queue one active request at a time, delivering code, UI components, API integrations, and bug fixes directly to the client's repository or staging environment. 
 
-## Szolgáltatások
+## Who it's for
+Cue is designed for English-speaking B2B founders, SaaS companies, and e-commerce brands in the US and Western Europe who need reliable, senior-level web development but want to avoid the overhead of hiring an agency, managing a freelancer, or paying an in-house developer salary.
 
-### Prémium weboldal fejlesztés
-Egyedi, Next.js alapú weboldalak React és Tailwind CSS technológiával.
-Gyors betöltés, mobilbarát megjelenés, Google SEO-ra optimalizált struktúra.
-WordPress helyett modern, biztonságos és skálázható megoldás.
-Célcsoport: magyar KKV-k, ingatlanfejlesztők, egészségügyi szolgáltatók,
-vendéglátás, turizmus.
+## How it works
+1. Subscribe: The client signs up for the $2,495/mo flat-fee subscription.
+2. Queue requests: The client gets a dedicated Trello board where they can add as many development requests as they want.
+3. Development begins: We pick up the top request from the active queue and begin development.
+4. Delivery in 48h: The requested feature is delivered (typically within 48 hours for standard requests).
+5. Review & Revisions: The client reviews the work via a Loom video walkthrough or staging link. If revisions are needed, we do them until the client is 100% satisfied.
+6. Next task: Once approved, we immediately begin working on the next request in the queue.
 
-### AI automatizáció
-Mesterséges intelligencia alapú rendszerek, amelyek emberi beavatkozás nélkül
-kezelik az ismétlődő üzleti folyamatokat:
-- Automatikus ügyfélkommunikáció és lead kezelés
-- AI-alapú időpontfoglalás és visszaigazolás
-- Intelligens email kampányok és hírlevélküldés
-- Számlázási automatizáció (Billingo integráció)
-- Adósságkezelő emlékeztető rendszerek
-- Google Review kérő automatizmusok
+## Pricing
+- Flat fee: $2,495 per month.
+- No hidden fees, no hourly billing, no estimates.
+- Subscriptions can be paused or cancelled at any time without penalty. If a client pauses with 10 days left in their billing cycle, they retain those 10 days to use in the future.
 
-### Üzleti rendszerintegráció
-Naptár, CRM, számlázó és email rendszerek összekötése egyetlen, automatizált
-folyamatba. Támogatott integrációk: Google Calendar, Billingo, Resend,
-Supabase, HubSpot, Stripe, WhatsApp, n8n, Make.
-Vagy akár teljesen személyre szabott mini szoftver, belső eszköz vagy
-egyedi CRM rendszer — ha a piaci megoldások egyike sem illeszkedik
-a vállalkozás folyamataihoz.
+## What can be requested
+- Landing page sections
+- API integrations
+- Auth flows
+- Admin dashboards
+- Email templates
+- Performance fixes
+- Database schemas
+- Webhook setups
+- UI components
+- SEO fixes
+- Form logic
+- Cron jobs
+- Complex animations
+- Third-party integrations
+- Stripe integrations
+- Supabase setups
 
-### Admin panelek és belső eszközök
-Egyedi fejlesztésű admin felületek ügyfelek, listák, tartalmak és
-értesítések kezeléséhez — külső SaaS előfizetés nélkül.
+## What is NOT included
+- Native mobile app development (iOS/Android). We strictly build web applications and Progressive Web Apps (PWAs).
+- Complex custom 3D modeling or WebGL.
+- Extensive branding or logo design.
 
----
+## Communication
+- 100% Asynchronous.
+- Zero calls. Zero meetings.
+- All requests are managed via Trello.
+- Updates and deliveries are communicated via email and Loom screen recordings.
 
-## Referenciák
+## Tech stack supported
+- Core: React, Next.js, TypeScript
+- Styling: Tailwind CSS, Framer Motion
+- Backend & DB: Supabase, Node.js, REST APIs
+- Infrastructure: Vercel
 
-### GoStayDirect (gostaydirect.eu)
-Közvetlen balatoni szállásfoglalási platform — az Airbnb-alternatíva
-közvetítői díj nélkül. 55+ szállás, 23 balatoni település.
-Teljes rendszer egyedi fejlesztés: Next.js frontend, Supabase backend,
-szálláslistázó felület, admin panel, egyedi email értesítések,
-host regisztrációs folyamat. Egyedül tervezve és fejlesztve.
-Technológia: Next.js, Supabase, Vercel, Resend.
+## About OptimaAI
+OptimaAI is a web development and AI automation company based in Budapest, Hungary. Cue is a productized service offering created by the OptimaAI team to serve international clients with an asynchronous, high-speed development model.
 
-### Sár-hegyi Panoráma Lakópark (sarhegyipanorama.hu)
-Prémium lakópark projekt Gyöngyösön — 100+ új építésű otthon,
-10 hektáros zárt közösség a Mátra közelében.
-Fejlesztett rendszerek: teljes Next.js weboldal egyedi arculattal,
-interaktív telektérkép státuszkövetéssel (szabad/foglalt/eladva),
-admin panel, email kampányküldő rendszer, mini CRM,
-feliratkozáskezelő, azonnali értesítési rendszer,
-GA4 analitika integráció. Folyamatos havi karbantartás és támogatás.
-Technológia: Next.js, Supabase, Resend, Vercel.
-
-### Aranykereszt Nonprofit Kft. (aranykereszt.hu)
-Budapesti idősellátó szervezet — két telephely:
-Margaréta Idősek Otthona (Budapest) és Ezüstfenyő (Kiskunlacháza).
-Fejlesztett rendszer: többoldalas bemutatkozó weboldal,
-online időpontfoglaló rendszer.
-Technológia: HTML, CSS, JavaScript.
-
----
-
-## Technológiai stack
-
-**Frontend:** Next.js 14+, React, TypeScript, Tailwind CSS
-**Backend & adatbázis:** Supabase, PostgreSQL, Prisma
-**Infrastruktúra:** Vercel, Docker
-**AI & automatizáció:** OpenAI API, Anthropic Claude API, n8n, Make
-**Email:** Resend
-**Fizetés:** Stripe, PayPal
-**CRM & marketing:** HubSpot, Google Analytics 4
-
----
-
-## Miben különbözünk
-
-- Nem WordPress, nem sablon — minden projekt egyedi fejlesztés
-- Nem csak weboldal: automatizált háttérrendszerekkel szállítunk
-- Demo-first megközelítés: a döntés előtt már látod a rendszert működés közben
-- Folyamatos havi karbantartás és fejlesztés retainer modellben
-- Kis csapat, közvetlen kommunikáció — nem adsz le egy ticketet és vársz
-
----
-
-## Minek NEM vagyunk jók
-
-- WordPress sablonok telepítése és karbantartása
-- Egyszerű sablon alapú megoldások
-- Tömeggyártott, olcsó weboldal projektek
-- Olyan vállalkozások, ahol nincs meglévő üzleti folyamat amit automatizálni lehetne
-
----
-
-## Kapcsolat & elérhetőség
-
-- Weboldal: https://optimaai.eu
-- Email: info@optimaai.eu
-- Konzultáció: https://optimaai.eu/kapcsolat
-- Válasz 24 órán belül munkanapokon
-- Székhely: Budapest, Magyarország
-- Működési terület: egész Magyarország, elsősorban Budapest
-
----
-
-## Főbb oldalak
-
-- [Főoldal](https://optimaai.eu/)
-- [Kapcsolat / Konzultáció kérés](https://optimaai.eu/kapcsolat)
-- [Optima Lab](https://lab.optimaai.eu)
-- [ÁSZF](https://optimaai.eu/aszf)
-- [Adatvédelem](https://optimaai.eu/adatvedelem)
+## Contact
+Email: hello@optimaai.eu
+Website: https://cue.optimaai.eu
+Parent Company: https://optimaai.eu
