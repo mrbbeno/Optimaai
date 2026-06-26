@@ -68,6 +68,8 @@ export const viewport = {
   initialScale: 1,
 };
 
+import CueBackgroundProvider from "@/components/CueBackgroundProvider";
+
 export default function CueLayout({
   children,
 }: {
@@ -77,6 +79,7 @@ export default function CueLayout({
     <div 
       className={`${geist.variable} ${geistMono.variable} cue-theme font-[family-name:var(--font-geist)] relative w-full z-50 bg-[#030303]`}
     >
+      <CueBackgroundProvider />
       <link rel="me" href="mailto:hello@optimaai.eu" />
       <CueStructuredData />
       <div className="relative z-10 w-full flex flex-col min-h-screen bg-[#030303]">

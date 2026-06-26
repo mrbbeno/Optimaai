@@ -150,7 +150,7 @@ function StickyProcess() {
       
       {/* Solid background block that acts as a wiper to erase the PROCESS text from bottom to top */}
       <div className="h-[20vh] w-full relative z-20">
-        <div className="absolute inset-y-0 left-[-50vw] right-[-50vw] bg-[#030303]"></div>
+        <div className="absolute inset-y-0 bg-[#030303]" style={{ left: 'calc(-50vw + 50%)', right: 'calc(-50vw + 50%)' }}></div>
       </div>
     </section>
   );
@@ -422,7 +422,7 @@ function CTA() {
 
 export default function Home() {
   return (
-    <main className="bg-[#030303] selection:bg-blue-500/30 selection:text-white min-h-screen overflow-x-hidden w-full">
+    <main className="bg-[#030303] selection:bg-blue-500/30 selection:text-white min-h-screen">
       <Navbar />
       <StickyHero />
       <StickyProcess />
