@@ -34,16 +34,13 @@ export function LabNavbar() {
             ${isOpen ? 'flex' : 'hidden md:flex'}
           `}
         >
-          <a href="#featured" onClick={() => setIsOpen(false)} className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left">Featured</a>
-          <a href="#clients" onClick={() => setIsOpen(false)} className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left">Clients</a>
-          <a href="#tools" onClick={() => setIsOpen(false)} className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left">Tools</a>
-          <a href="#experiments" onClick={() => setIsOpen(false)} className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left">R&D</a>
-          <a href="#research" onClick={() => setIsOpen(false)} className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left">Research</a>
+          
+          <a href="https://optimaai.eu" onClick={() => setIsOpen(false)} className="font-sans text-[13px] text-neutral-500 hover:text-neutral-950 transition-colors font-light text-center md:text-left">Agency Site</a>
           
           <div className="h-px w-full md:h-4 md:w-px bg-neutral-200" />
           
-          <a href="https://optimaai.eu" className="font-sans text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-mono flex items-center justify-center gap-1.5 w-full md:w-auto">
-            Agency Site <ExternalLink className="w-3 h-3" />
+          <a href="https://cue.optimaai.eu" className="font-sans text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-mono flex items-center justify-center gap-1.5 w-full md:w-auto">
+            CUE <ExternalLink className="w-3 h-3" />
           </a>
         </div>
       </nav>

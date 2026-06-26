@@ -6,10 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Szolgáltatások", href: "/#szolgaltatasok" },
-  { name: "Referenciák", href: "/#referenciak" },
-  { name: "Folyamat", href: "/#folyamat" },
   { name: "Kapcsolat", href: "/kapcsolat" },
+  { name: "Optima Lab", href: "https://lab.optimaai.eu" },
 ];
 
 export default function Navbar() {
@@ -74,13 +72,13 @@ export default function Navbar() {
           ))}
           <div className="h-px w-full md:h-4 md:w-px bg-black/10"></div>
           <a
-            href="https://lab.optimaai.eu"
+            href="https://cue.optimaai.eu"
             target="_blank"
             rel="noopener noreferrer"
             className="font-inter text-[12px] py-1.5 px-4 bg-neutral-100 hover:bg-neutral-200 rounded-full text-neutral-600 transition-colors font-medium flex items-center justify-center gap-1.5 w-full md:w-auto"
             onClick={() => setMenuOpen(false)}
           >
-            Optima Lab
+            CUE
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
