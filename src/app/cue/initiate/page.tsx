@@ -43,7 +43,7 @@ export default function InitiatePage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl text-center"
         >
-          <h1 className="font-[family-name:var(--font-geist)] font-black text-[60px] md:text-[100px] text-white tracking-tighter leading-none mb-8">
+          <h1 className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[100px] text-white tracking-tighter leading-none mb-6 md:mb-8">
             INITIATED.
           </h1>
           <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[20px] text-white/50 mb-12 max-w-lg mx-auto leading-relaxed">
@@ -72,18 +72,18 @@ export default function InitiatePage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-4 text-white/50 hover:text-white transition-colors font-[family-name:var(--font-geist-mono)] text-[12px] uppercase tracking-widest mb-20"
+          className="inline-flex items-center gap-4 text-white/50 hover:text-white transition-colors font-[family-name:var(--font-geist-mono)] text-[12px] uppercase tracking-widest mb-12 md:mb-20"
         >
           <span>←</span> Back to CUE
         </motion.a>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="font-[family-name:var(--font-geist)] font-black text-[60px] md:text-[80px] text-white tracking-tighter leading-[0.9] mb-8">
+            <h1 className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[80px] text-white tracking-tighter leading-[0.9] mb-6 md:mb-8">
               ACTIVATE <br/> CUE.
             </h1>
             <p className="font-[family-name:var(--font-geist-mono)] text-[16px] text-white/40 leading-relaxed max-w-sm">
@@ -96,7 +96,7 @@ export default function InitiatePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-10 justify-center"
+            className="flex flex-col gap-8 md:gap-10 justify-center mt-8 lg:mt-0"
           >
             <div className="relative group">
               <input 

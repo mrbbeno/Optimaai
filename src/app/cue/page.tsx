@@ -65,20 +65,20 @@ function StickyHero() {
 
         {/* Phase 1: DEV WORK */}
         <motion.div 
-          className="absolute text-center flex flex-col items-center z-10 w-full px-6"
+          className="absolute text-center flex flex-col items-center z-10 w-full px-4 md:px-6"
           style={{ scale: textScale, opacity: textOpacity, filter: textFilter }}
         >
-          <div className="font-[family-name:var(--font-geist-mono)] text-[10px] md:text-[12px] text-white/40 tracking-[0.5em] uppercase mb-8">
+          <div className="font-[family-name:var(--font-geist-mono)] text-[10px] md:text-[12px] text-white/40 tracking-[0.3em] md:tracking-[0.5em] uppercase mb-4 md:mb-8">
             Async Subscription
           </div>
-          <h1 className="font-[family-name:var(--font-geist)] font-black text-[15vw] md:text-[12vw] leading-[0.8] tracking-tighter text-white">
+          <h1 className="font-[family-name:var(--font-geist)] font-black text-[20vw] md:text-[12vw] leading-[0.8] tracking-tighter text-white">
             DEV WORK.
           </h1>
         </motion.div>
 
         {/* Phase 2: DELIVERED */}
         <motion.div 
-          className="absolute text-center z-20 w-full px-6 flex justify-center items-center"
+          className="absolute text-center z-20 w-full px-4 md:px-6 flex justify-center items-center"
           style={{ scale: deliveredScale, opacity: deliveredOpacity }}
         >
           <h2 className="font-[family-name:var(--font-geist)] font-black text-[8vw] md:text-[6vw] leading-[0.9] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 whitespace-nowrap">
@@ -99,20 +99,20 @@ function StickyProcess() {
   ];
 
   return (
-    <section id="process" className="pt-64 pb-16 max-w-5xl mx-auto px-6 relative z-10">
+    <section id="process" className="pt-32 md:pt-64 pb-16 max-w-5xl mx-auto px-4 md:px-6 relative z-10">
       <motion.div 
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         viewport={{ once: true }}
-        className="mb-24 text-center sticky top-[12vh] z-10"
+        className="mb-16 md:mb-24 text-center sticky top-[10vh] md:top-[12vh] z-10"
       >
-        <h2 className="font-[family-name:var(--font-geist)] font-black text-[12vw] md:text-[8vw] text-white tracking-tighter leading-none">
+        <h2 className="font-[family-name:var(--font-geist)] font-black text-[18vw] md:text-[8vw] text-white tracking-tighter leading-none">
           PROCESS.
         </h2>
       </motion.div>
       
-      <div className="flex flex-col gap-6 relative z-30">
+      <div className="flex flex-col gap-4 md:gap-6 relative z-30">
         {steps.map((step, i) => (
           <motion.div 
             key={i} 
@@ -121,22 +121,22 @@ function StickyProcess() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: "-100px" }}
             className="sticky w-full"
-            style={{ top: `calc(36vh + ${i * 40}px)` }}
+            style={{ top: `calc(25vh + ${i * 20}px)` }}
           >
             {/* The Card */}
-            <div className="bg-[#050505] border border-white/10 rounded-[32px] p-10 md:p-16 shadow-[0_-20px_40px_rgba(0,0,0,0.8)] flex flex-col md:flex-row items-start md:items-center justify-between gap-10 overflow-hidden relative">
+            <div className="bg-[#050505] border border-white/10 rounded-[24px] md:rounded-[32px] p-6 md:p-16 shadow-[0_-20px_40px_rgba(0,0,0,0.8)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-10 overflow-hidden relative">
               {/* Subtle top glow on the card edge */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
               
-              <div className="font-[family-name:var(--font-geist)] font-black text-[80px] md:text-[140px] leading-none text-white/[0.03] select-none">
+              <div className="font-[family-name:var(--font-geist)] font-black text-[60px] md:text-[140px] leading-none text-white/[0.03] select-none">
                 {step.num}
               </div>
               
-              <div className="flex-1 w-full text-right">
-                <h3 className="font-[family-name:var(--font-geist)] font-black text-[40px] md:text-[64px] text-white tracking-tighter leading-[0.9] mb-6">
+              <div className="flex-1 w-full text-left md:text-right">
+                <h3 className="font-[family-name:var(--font-geist)] font-black text-[32px] md:text-[64px] text-white tracking-tighter leading-[0.9] mb-4 md:mb-6">
                   {step.title}
                 </h3>
-                <p className="font-[family-name:var(--font-geist-mono)] text-[20px] md:text-[28px] text-white/50 tracking-tight">
+                <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[28px] text-white/50 tracking-tight">
                   {step.desc}
                 </p>
               </div>
@@ -163,8 +163,8 @@ function Scope() {
   ];
 
   return (
-    <section className="py-40 bg-[#030303] px-6 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+    <section className="py-24 md:py-40 bg-[#030303] px-4 md:px-6 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-20">
         <div className="w-full lg:w-1/2">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -172,10 +172,10 @@ function Scope() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[72px] text-white tracking-tighter leading-[0.9] mb-8">
+            <h2 className="font-[family-name:var(--font-geist)] font-black text-[40px] md:text-[72px] text-white tracking-tighter leading-[0.9] mb-6 md:mb-8">
               ANYTHING IN CODE.
             </h2>
-            <p className="font-[family-name:var(--font-geist)] text-[20px] text-white/50 max-w-md">
+            <p className="font-[family-name:var(--font-geist)] text-[16px] md:text-[20px] text-white/50 max-w-md">
               Each request is a single focused deliverable. Larger ideas get broken into 48-hour chunks. We build until it's done.
             </p>
           </motion.div>
@@ -202,11 +202,11 @@ function Scope() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="py-40 bg-[#0a0a0a] px-6 relative z-10">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-20">
+    <section id="pricing" className="py-24 md:py-40 bg-[#0a0a0a] px-4 md:px-6 relative z-10">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 md:gap-20">
         
         {/* Left: The CUE Black Card */}
-        <div className="w-full lg:w-1/2 flex justify-center">
+        <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
           <motion.div 
             initial={{ opacity: 0, y: 50, rotateX: 10 }}
             whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
@@ -221,22 +221,22 @@ function Pricing() {
         </div>
 
         {/* Right: The Brutalist Pricing Text */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center">
+        <div className="w-full lg:w-1/2 flex flex-col justify-center order-1 lg:order-2">
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             viewport={{ once: true, margin: "-100px" }}
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <div className="font-[family-name:var(--font-geist-mono)] text-[12px] text-white/40 uppercase tracking-widest mb-4">
+            <div className="font-[family-name:var(--font-geist-mono)] text-[10px] md:text-[12px] text-white/40 uppercase tracking-widest mb-4">
               Monthly Retainer
             </div>
-            <div className="flex items-baseline gap-4 mb-2">
-              <div className="font-[family-name:var(--font-geist)] font-black text-[60px] md:text-[80px] text-white leading-none tracking-tighter">
+            <div className="flex items-baseline gap-2 md:gap-4 mb-2">
+              <div className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[80px] text-white leading-none tracking-tighter">
                 $2,495
               </div>
-              <div className="font-[family-name:var(--font-geist-mono)] text-[16px] text-white/30 uppercase tracking-widest">
+              <div className="font-[family-name:var(--font-geist-mono)] text-[12px] md:text-[16px] text-white/30 uppercase tracking-widest">
                 / Month
               </div>
             </div>
@@ -345,14 +345,14 @@ function FAQ() {
   ];
 
   return (
-    <section className="py-40 bg-[#030303] px-6">
+    <section className="py-24 md:py-40 bg-[#030303] px-4 md:px-6">
       <div className="max-w-5xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true, margin: "-100px" }}
-          className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[72px] text-white tracking-tighter leading-none mb-16"
+          className="font-[family-name:var(--font-geist)] font-black text-[40px] md:text-[72px] text-white tracking-tighter leading-none mb-10 md:mb-16"
         >
           FAQ.
         </motion.h2>
@@ -376,7 +376,7 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section className="py-40 bg-blue-600 px-6 relative overflow-hidden flex items-center justify-center min-h-screen">
+    <section className="py-24 md:py-40 bg-blue-600 px-4 md:px-6 relative overflow-hidden flex items-center justify-center min-h-[70vh] md:min-h-screen">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,rgba(0,0,0,0)_70%)] mix-blend-overlay pointer-events-none"></div>
       
       <motion.div 
@@ -386,14 +386,14 @@ function CTA() {
         viewport={{ once: true }}
         className="text-center relative z-10 w-full max-w-5xl"
       >
-        <h2 className="font-[family-name:var(--font-geist)] font-black text-[12vw] leading-[0.8] tracking-tighter text-white uppercase break-words mb-10">
+        <h2 className="font-[family-name:var(--font-geist)] font-black text-[18vw] md:text-[12vw] leading-[0.8] tracking-tighter text-white uppercase break-words mb-8 md:mb-10">
           STOP WAITING.
         </h2>
         <button 
           onClick={() => window.location.href = "/cue/initiate"}
-          className="bg-black text-white px-10 py-5 rounded-full font-[family-name:var(--font-geist)] font-bold text-[18px] uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-2xl"
+          className="bg-black text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-[family-name:var(--font-geist)] font-bold text-[14px] md:text-[18px] uppercase tracking-widest hover:scale-105 transition-transform duration-300 shadow-2xl"
         >
-          Initiate Subscription
+          Activate Cue
         </button>
       </motion.div>
     </section>
