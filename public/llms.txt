@@ -3,13 +3,13 @@
 Cue by OptimaAI is an asynchronous web development subscription service. It delivers high-quality React, Next.js, and Supabase development without meetings or estimates, operating strictly via an async pipeline with an average delivery time of 48 hours per request.
 
 ## What Cue does
-Cue provides productized web development. Clients subscribe for a flat monthly fee ($2,495/mo) and can queue an unlimited number of development tasks. OptimaAI works through the queue one active request at a time, delivering code, UI components, API integrations, and bug fixes directly to the client's repository or staging environment. 
+Cue provides productized web development. Clients subscribe for a flat monthly fee (starting at $199/mo) and can queue an unlimited number of development tasks. OptimaAI works through the queue one active request at a time, delivering code, UI components, API integrations, and bug fixes directly to the client's repository or staging environment. 
 
 ## Who it's for
 Cue is designed for English-speaking B2B founders, SaaS companies, and e-commerce brands in the US and Western Europe who need reliable, senior-level web development but want to avoid the overhead of hiring an agency, managing a freelancer, or paying an in-house developer salary.
 
 ## How it works
-1. Subscribe: The client signs up for the $2,495/mo flat-fee subscription.
+1. Subscribe: The client signs up for one of the three flat-fee subscriptions (Mini, Growth, or Pro).
 2. Queue requests: The client gets a dedicated Trello board where they can add as many development requests as they want.
 3. Development begins: We pick up the top request from the active queue and begin development.
 4. Delivery in 48h: The requested feature is delivered (typically within 48 hours for standard requests).
@@ -17,7 +17,9 @@ Cue is designed for English-speaking B2B founders, SaaS companies, and e-commerc
 6. Next task: Once approved, we immediately begin working on the next request in the queue.
 
 ## Pricing
-- Flat fee: $2,495 per month.
+- Cue Mini: $199 per month. Best for keeping your existing app or website secure and maintained.
+- Cue Growth: $599 per month. Best for active businesses needing marketing pages and workflow automations.
+- Cue Pro: $1,495 per month. Best for building full-scale SaaS platforms or custom internal systems from scratch.
 - No hidden fees, no hourly billing, no estimates.
 - Subscriptions can be paused or cancelled at any time without penalty. If a client pauses with 10 days left in their billing cycle, they retain those 10 days to use in the future.
 

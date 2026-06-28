@@ -17,8 +17,10 @@ function Navbar() {
           <span className="font-[family-name:var(--font-geist)] font-medium text-[10px] md:text-[12px] text-white/50 tracking-widest uppercase">by OPTIMAAI</span>
         </div>
         <button 
-          onClick={() => window.location.href = "/cue/initiate"}
-          className="relative group overflow-hidden rounded-full"
+          onClick={() => {
+            document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="relative group overflow-hidden rounded-full pointer-events-auto"
         >
           <div className="absolute inset-0 bg-white group-hover:scale-105 transition-transform duration-500 ease-out"></div>
           <div className="relative px-5 py-2 font-[family-name:var(--font-geist)] font-bold text-[11px] md:text-[12px] text-black uppercase tracking-widest">
@@ -166,7 +168,7 @@ function Scope() {
   ];
 
   return (
-    <section className="py-24 md:py-40 bg-[#030303] px-4 md:px-6 relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-[#030303] px-4 md:px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-20">
         <div className="w-full lg:w-1/2">
           <motion.div 
@@ -208,89 +210,159 @@ function Scope() {
 }
 
 function Pricing() {
+  const tiers = [
+    {
+      name: "Cue Mini",
+      price: "$199",
+      subtitle: "Perfect for keeping your existing app or website secure, fast, and constantly maintained.",
+      features: [
+        "Ongoing Maintenance",
+        "Minor Tweaks Included",
+        "3-5 Day Turnaround",
+        "No Contracts"
+      ],
+      buttonText: "Activate Mini"
+    },
+    {
+      name: "Cue Growth",
+      price: "$599",
+      subtitle: "Your dedicated development arm for building integrations, landing pages, and automated workflows.",
+      features: [
+        "One Request at a Time",
+        "2-3 Day Turnaround",
+        "AI-Accelerated Senior Dev",
+        "Async Communication",
+        "14-Day Money-Back Guarantee"
+      ],
+      buttonText: "Activate Growth",
+      highlight: true
+    },
+    {
+      name: "Cue Pro",
+      price: "$1,495",
+      subtitle: "High-speed product development. Best for building full-scale SaaS platforms or custom internal systems from scratch.",
+      features: [
+        "Priority Development",
+        "24-48 Hour Turnaround",
+        "Complex Architecture",
+        "Advanced Project Breakdown",
+        "Pause or Cancel Anytime"
+      ],
+      buttonText: "Activate Pro"
+    }
+  ];
+
   return (
-    <section id="pricing" className="py-24 md:py-40 bg-[#0a0a0a] px-4 md:px-6 relative z-10">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 md:gap-20">
-        
-        {/* Left: The CUE Black Card */}
-        <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
-          <motion.div 
-            initial={{ opacity: 0, y: 50, rotateX: 10 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="w-full max-w-[500px] relative rounded-none overflow-visible shadow-[0_30px_60px_rgba(0,0,0,0.8)]"
-            style={{ perspective: "2000px" }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/Card.png" alt="CUE Membership Card" className="w-full h-auto block pointer-events-none" />
-          </motion.div>
-        </div>
-
-        {/* Right: The Brutalist Pricing Text */}
-        <div className="w-full lg:w-1/2 flex flex-col justify-center order-1 lg:order-2">
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="mb-8 md:mb-12"
-          >
-            <div className="font-[family-name:var(--font-geist-mono)] text-[10px] md:text-[12px] text-white/40 uppercase tracking-widest mb-4">
-              Monthly Retainer
+    <section id="pricing" className="py-20 md:py-32 bg-[#030303] px-4 md:px-6 relative z-10 overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute inset-0 mix-blend-screen pointer-events-none z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(circle,rgba(59,130,246,0.08)_0%,rgba(0,0,0,0)_60%)]"></div>
+        <div className="absolute top-0 left-0 w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-[radial-gradient(circle,rgba(249,115,22,0.04)_0%,rgba(0,0,0,0)_60%)]"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
+        >
+          <div>
+            <div className="font-[family-name:var(--font-geist-mono)] text-[12px] text-white/40 uppercase tracking-[0.5em] mb-6">
+              Pick Your Pace
             </div>
-            <div className="flex items-baseline gap-2 md:gap-4 mb-2">
-              <div className="font-[family-name:var(--font-geist)] font-black text-[48px] md:text-[80px] text-white leading-none tracking-tighter">
-                $2,495
-              </div>
-              <div className="font-[family-name:var(--font-geist-mono)] text-[12px] md:text-[16px] text-white/30 uppercase tracking-widest">
-                / Month
-              </div>
-            </div>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, margin: "-100px" }}
-            style={{ transformOrigin: "left" }}
-            className="w-full h-px bg-white/10 mb-12"
-          ></motion.div>
-          
-          <ul className="flex flex-col gap-6 mb-16">
-            {[
-              "One active request at a time",
-              "Avg. 48 hour delivery",
-              "Unlimited projects & repositories",
-              "Pause or cancel anytime"
-            ].map((f, i) => (
-              <motion.li 
-                key={i} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 + (i * 0.1), ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="flex items-center gap-6"
-              >
-                <span className="font-[family-name:var(--font-geist-mono)] text-[12px] text-white/20">0{i + 1}</span>
-                <span className="font-[family-name:var(--font-geist)] text-[18px] md:text-[20px] text-white/80 tracking-tight">{f}</span>
-              </motion.li>
-            ))}
-          </ul>
-          
-          <motion.button 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            viewport={{ once: true, margin: "-50px" }}
-            onClick={() => window.location.href = "/cue/initiate"}
-            className="w-full bg-white text-black hover:bg-gray-200 transition-colors py-6 font-[family-name:var(--font-geist)] font-black text-[16px] tracking-widest uppercase flex items-center justify-center gap-4 rounded-[25px]"
-          >
-            Activate Cue
-          </motion.button>
-        </div>
+            <h2 className="font-[family-name:var(--font-geist)] font-black text-[12vw] md:text-[6vw] leading-[0.8] text-white tracking-tighter">
+              MEMBERSHIP.
+            </h2>
+          </div>
+          <p className="font-[family-name:var(--font-geist)] text-[16px] text-white/50 max-w-sm">
+            Three tiers designed to match your company's velocity. No long-term contracts. Pause or cancel anytime.
+          </p>
+        </motion.div>
 
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+          {tiers.map((tier, i) => {
+            const glowClasses = [
+              "bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.02)_0%,rgba(0,0,0,0)_70%)]",
+              "bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.02)_0%,rgba(0,0,0,0)_70%)]",
+              "bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.02)_0%,rgba(0,0,0,0)_70%)]"
+            ];
+            
+            const hoverGlowClasses = [
+              "bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.05)_0%,rgba(0,0,0,0)_70%)]",
+              "bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.05)_0%,rgba(0,0,0,0)_70%)]",
+              "bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.05)_0%,rgba(0,0,0,0)_70%)]"
+            ];
+            
+            return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-100px" }}
+              className={`relative flex flex-col p-6 md:p-8 border border-white/10 hover:border-white/30 rounded-[25px] group overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] ${tier.highlight ? 'bg-white/[0.02]' : 'bg-[#050505]'}`}
+            >
+              {/* Subtle inner glows */}
+              <div className={`absolute inset-0 ${glowClasses[i]} pointer-events-none z-0 transition-opacity duration-500`}></div>
+              <div className={`absolute inset-0 ${hoverGlowClasses[i]} opacity-0 group-hover:opacity-100 pointer-events-none z-0 transition-opacity duration-500`}></div>
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="mb-8">
+                  <div className={`font-[family-name:var(--font-geist-mono)] text-[12px] uppercase tracking-widest mb-6 transition-colors duration-500 flex items-center gap-3 ${tier.highlight ? 'text-white font-bold group-hover:text-white' : 'text-white/40 group-hover:text-white/80'}`}>
+                    {tier.name}
+                    {tier.highlight && <span className="px-2 py-1 border border-white/20 group-hover:border-white/40 text-white/60 group-hover:text-white text-[10px] rounded-full transition-colors duration-500">RECOMMENDED</span>}
+                  </div>
+                  
+                  <div className="flex items-baseline gap-2 mb-6">
+                    <div className="font-[family-name:var(--font-geist)] font-black text-[40px] md:text-[56px] leading-none tracking-tighter text-white">
+                      {tier.price}
+                    </div>
+                  </div>
+                  
+                  <p className="font-[family-name:var(--font-geist)] text-[14px] leading-relaxed text-white/50 group-hover:text-white/70 transition-colors duration-500 min-h-[60px]">
+                    {tier.subtitle}
+                  </p>
+                </div>
+
+                <div className="w-full h-px bg-white/10 group-hover:bg-white/20 transition-colors duration-500 mb-8"></div>
+
+                <ul className="flex flex-col gap-4 flex-1 mb-12">
+                  {tier.features.map((f, j) => {
+                    return (
+                      <li key={j} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 shrink-0 text-white/30 group-hover:text-white/70 transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="font-[family-name:var(--font-geist)] font-medium text-[14px] text-white/80 group-hover:text-white transition-colors duration-500 pt-0.5">
+                          {f}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <div className="mt-auto relative z-10">
+                  <button 
+                    onClick={() => window.location.href = `/cue/initiate?plan=${tier.name.replace('Cue ', '')}`}
+                    className={`w-full py-5 rounded-[25px] font-[family-name:var(--font-geist)] font-black text-[14px] uppercase tracking-[0.2em] transition-all duration-500 flex items-center justify-center gap-3 ${
+                      tier.highlight 
+                        ? 'bg-white text-black hover:bg-gray-200' 
+                        : 'bg-white/5 border border-white/10 text-white hover:bg-white hover:text-black hover:border-white'
+                    }`}
+                  >
+                    {tier.buttonText}
+                    <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -333,7 +405,7 @@ function FAQItem({ q, a, index }: { q: string, a: string, index: number }) {
           >
             <div className="flex flex-col md:flex-row pb-12">
               <div className="hidden md:block w-32"></div>
-              <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[20px] text-white/50 max-w-3xl leading-relaxed">
+              <p className="font-[family-name:var(--font-geist-mono)] text-[16px] md:text-[20px] text-white/50 max-w-3xl leading-relaxed whitespace-pre-wrap">
                 {a}
               </p>
             </div>
@@ -347,25 +419,25 @@ function FAQItem({ q, a, index }: { q: string, a: string, index: number }) {
 function FAQ() {
   const faqs = [
     {
-      q: "What counts as one request?",
-      a: "Any task a senior dev can complete in under 4 hours. Larger work gets broken into focused steps automatically."
+      q: "Which plan is right for my business?",
+      a: "It depends entirely on your current stage and what you need shipped:\n\nCue Mini ($199/mo): Best if your website or app is already finished, and you just want a reliable tech partner to handle hosting, security, and minor monthly updates (up to 3 hours).\n\nCue Growth ($599/mo): Best for active businesses that need ongoing marketing pages, workflow automations (Make/Zapier), and regular new features shipped one by one, 100% risk-free.\n\nCue Pro ($1,495/mo): Best for founders building a brand-new SaaS, complex software, or 3D web environments from scratch who need daily, high-speed development sprints."
+    },
+    {
+      q: "What counts as a single request?",
+      a: "Any task that a senior developer can complete in under 4 hours (e.g., a landing page section, an automation, or a bug fix). For Growth and Pro plans, you can queue up unlimited requests—we work through them sequentially (one active task at a time). If you submit a massive project, we automatically break it down into focused, 4-hour milestones so you see progress every 24-48 hours."
     },
     {
       q: "Do you do calls or meetings?",
-      a: "Never. Everything is async — Trello, email, or Loom. This is how we maintain our speed and low prices."
+      a: "Never. Everything is 100% asynchronous via Trello, email, or Loom videos. Eliminating meetings is exactly how we maintain our high-speed delivery and keep our prices highly competitive."
     },
     {
-      q: "What if I'm not happy with the result?",
-      a: "We do revisions until it's exactly what you want. No questions asked."
-    },
-    {
-      q: "Can I pause my subscription?",
-      a: "Yes. If you don't have enough tasks for a full month, just pause and resume when you're ready."
+      q: "What if I’m not happy with the results, or run out of tasks?",
+      a: "We offer unlimited revisions—we will keep tweaking the code or design until it’s exactly what you want. Also, you can pause or cancel your subscription anytime. On the Growth plan, you even get a 14-day money-back guarantee, making your onboarding completely risk-free."
     }
   ];
 
   return (
-    <section className="py-24 md:py-40 bg-[#030303] px-4 md:px-6">
+    <section className="py-20 md:py-32 bg-[#030303] px-4 md:px-6">
       <div className="max-w-5xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 50 }}
@@ -396,7 +468,7 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section className="py-24 md:py-40 bg-blue-600 px-4 md:px-6 relative overflow-hidden flex items-center justify-center min-h-[70vh] md:min-h-screen">
+    <section className="py-20 md:py-32 bg-blue-600 px-4 md:px-6 relative overflow-hidden flex items-center justify-center min-h-[70vh] md:min-h-screen">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_0%,rgba(0,0,0,0)_70%)] mix-blend-overlay pointer-events-none"></div>
       
       <motion.div 
@@ -457,7 +529,7 @@ function SemanticFooter() {
         className="sr-only" 
         aria-hidden="false"
       >
-        Cue by OptimaAI is an asynchronous web development subscription service priced at $2,495 per month. 
+        Cue by OptimaAI is an asynchronous web development subscription service starting at $199 per month. 
         It is designed for B2B founders, SaaS companies, and e-commerce brands in the US and Western Europe. 
         Clients receive a dedicated Trello board where they can queue unlimited development requests. 
         The OptimaAI team works on one request at a time, delivering code in Next.js, React, and Supabase within an average of 48 hours. 

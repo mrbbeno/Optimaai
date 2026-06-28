@@ -13,16 +13,11 @@ export default function CueStructuredData() {
     },
     "url": "https://cue.optimaai.eu",
     "offers": {
-      "@type": "Offer",
-      "price": "2495",
+      "@type": "AggregateOffer",
       "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "priceType": "https://schema.org/MonthlyUsage",
-        "price": "2495",
-        "priceCurrency": "USD"
-      },
-      "availability": "https://schema.org/InStock",
+      "lowPrice": "199",
+      "highPrice": "1495",
+      "offerCount": "3",
       "url": "https://cue.optimaai.eu"
     },
     "category": "Web Development Service",
@@ -56,7 +51,7 @@ export default function CueStructuredData() {
     "description": "Productized async web development. Subscribe to Cue and get focused web development delivered in 48 hours. No meetings, no estimates. We build landing pages, integrations, and complex features.",
     "offers": {
       "@type": "Offer",
-      "price": "2495",
+      "price": "199",
       "priceCurrency": "USD"
     },
     "hasOfferCatalog": {
@@ -120,10 +115,18 @@ export default function CueStructuredData() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What counts as one request?",
+        "name": "Which plan is right for my business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Any task a senior developer can complete in under 4 hours. Larger work gets broken into focused steps, each delivered within 48 hours."
+          "text": "It depends entirely on your current stage and what you need shipped: Cue Mini ($199/mo) for maintenance, Cue Growth ($599/mo) for active marketing and features, and Cue Pro ($1,495/mo) for high-speed SaaS development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What counts as a single request?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any task that a senior developer can complete in under 4 hours. Massive projects are automatically broken down into focused 4-hour milestones delivered sequentially."
         }
       },
       {
@@ -131,31 +134,15 @@ export default function CueStructuredData() {
         "name": "Do you do calls or meetings?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Never. All communication is async — via Trello, email, or Loom video. No exceptions."
+          "text": "Never. Everything is 100% asynchronous via Trello, email, or Loom videos to maintain high-speed delivery."
         }
       },
       {
         "@type": "Question",
-        "name": "What if I'm not happy with the result?",
+        "name": "What if I’m not happy with the results, or run out of tasks?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We revise until it's right. No questions asked, no extra charges."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What tech stack do you work with?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Primarily Next.js, React, TypeScript, Supabase, Vercel, REST APIs, and webhooks. Most JavaScript/TypeScript-based stacks are supported."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I pause my subscription?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Pause anytime and resume when you're ready. No penalties, no fees."
+          "text": "We offer unlimited revisions. You can also pause or cancel your subscription anytime. The Growth plan includes a 14-day money-back guarantee."
         }
       }
     ]

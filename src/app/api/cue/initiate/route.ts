@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email } = await req.json();
+    const { name, email, plan = "Growth" } = await req.json();
 
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email are required." }, { status: 400 });
@@ -15,11 +15,12 @@ export async function POST(req: Request) {
     const adminEmail = await resend.emails.send({
       from: "CUE Subscription <info@optimaai.eu>",
       to: ["info@optimaai.eu"],
-      subject: `New CUE Request from ${name}`,
+      subject: `New CUE Request from ${name} (${plan})`,
       html: `
         <h2>New CUE Subscription Request</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Selected Plan:</strong> ${plan}</p>
       `,
     });
 
@@ -38,8 +39,13 @@ export async function POST(req: Request) {
           Hi ${name},
         </p>
         <p style="font-size: 18px; line-height: 1.6; color: #dddddd; margin-bottom: 40px;">
-          Your request to activate CUE has been successfully logged. We operate strictly asynchronously to guarantee speed and quality. 
+          Your request to activate the <strong>CUE ${plan}</strong> plan has been successfully logged. We operate strictly asynchronously to guarantee speed and quality. 
         </p>
+        
+        <div style="background-color: #111111; border: 1px solid #333333; padding: 20px; border-radius: 10px; margin-bottom: 40px;">
+          <p style="margin: 0; font-size: 14px; color: #888888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Selected Plan</p>
+          <p style="margin: 0; font-size: 24px; font-weight: bold; color: #ffffff;">Cue ${plan}</p>
+        </div>
         
         <div style="height: 1px; background-color: #333333; margin-bottom: 40px;"></div>
         

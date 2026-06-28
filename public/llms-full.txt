@@ -3,14 +3,14 @@
 Cue by OptimaAI is an asynchronous web development subscription service. It delivers high-quality React, Next.js, and Supabase development without meetings or estimates, operating strictly via an async pipeline with an average delivery time of 48 hours per request.
 
 ## What Cue does
-Cue provides productized web development. Clients subscribe for a flat monthly fee ($2,495/mo) and can queue an unlimited number of development tasks. OptimaAI works through the queue one active request at a time, delivering code, UI components, API integrations, and bug fixes directly to the client's repository or staging environment.
+Cue provides productized web development. Clients subscribe for a flat monthly fee (starting at $199/mo) and can queue an unlimited number of development tasks. OptimaAI works through the queue one active request at a time, delivering code, UI components, API integrations, and bug fixes directly to the client's repository or staging environment.
 
 ## Who it's for
 Cue is designed for English-speaking B2B founders, SaaS companies, and e-commerce brands in the US and Western Europe who need reliable, senior-level web development but want to avoid the overhead of hiring an agency, managing a freelancer, or paying an in-house developer salary.
 
 ## How it works (Detailed Async Workflow)
 Our process is highly optimized to eliminate wasted time and bureaucratic drag.
-1. **Subscribe**: The client signs up for the $2,495/mo flat-fee subscription.
+1. **Subscribe**: The client signs up for one of the three flat-fee subscriptions (Mini, Growth, or Pro).
 2. **Onboarding**: A dedicated Trello board is created for the client within minutes.
 3. **Queue requests**: The client can immediately start adding development requests as Trello cards. There is no limit to how many cards can be added to the backlog.
 4. **Development begins**: We pull the topmost active request into the "In Progress" column and begin coding. No scoping calls, no estimation negotiations.
@@ -40,7 +40,9 @@ How Cue differs from alternative web development hiring methods:
 - Senior-level output from day one.
 
 ## Pricing
-- Flat fee: $2,495 per month.
+- Cue Mini: $199 per month. Best for keeping your existing app or website secure and maintained.
+- Cue Growth: $599 per month. Best for active businesses needing marketing pages and workflow automations.
+- Cue Pro: $1,495 per month. Best for building full-scale SaaS platforms or custom internal systems from scratch.
 - No hidden fees, no hourly billing, no estimates.
 - **Pause feature**: Subscriptions can be paused at any time without penalty. Billing cycles are 31 days. If a client uses the service for 21 days and then pauses, they have 10 days of service remaining to use whenever they resume in the future.
 
@@ -71,11 +73,10 @@ Here are 5 specific scenarios where Cue excels:
 - Supabase setups
 
 ## FAQ
-- **What counts as one request?** Any task a senior developer can complete in under 4 hours. Larger work gets broken into focused steps, each delivered within 48 hours.
-- **Do you do calls or meetings?** Never. All communication is async — via Trello, email, or Loom video. No exceptions.
-- **What if I'm not happy with the result?** We revise until it's right. No questions asked, no extra charges.
-- **What tech stack do you work with?** Primarily Next.js, React, TypeScript, Supabase, Vercel, REST APIs, and webhooks. Most JavaScript/TypeScript-based stacks are supported.
-- **Can I pause my subscription?** Yes. Pause anytime and resume when you're ready. No penalties, no fees.
+- **Which plan is right for my business?** Cue Mini ($199/mo) for maintenance, Cue Growth ($599/mo) for active marketing and features, and Cue Pro ($1,495/mo) for high-speed SaaS development.
+- **What counts as a single request?** Any task that a senior developer can complete in under 4 hours. Massive projects are automatically broken down into focused 4-hour milestones delivered sequentially.
+- **Do you do calls or meetings?** Never. Everything is 100% asynchronous via Trello, email, or Loom videos to maintain high-speed delivery.
+- **What if I’m not happy with the results, or run out of tasks?** We offer unlimited revisions. You can also pause or cancel your subscription anytime. The Growth plan includes a 14-day money-back guarantee.
 
 ## Trust Signals
 - Infinite revisions: We don't stop working on a task until it's approved.
