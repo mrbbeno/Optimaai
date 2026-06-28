@@ -10,14 +10,16 @@ export default function CookieBanner() {
   const { consentState, acceptAll, declineAll } = useCookieConsent();
   const pathname = usePathname() || "";
   const [mounted, setMounted] = useState(false);
+  const [isCue, setIsCue] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    if (typeof window !== "undefined") {
+      setIsCue(window.location.pathname.startsWith("/cue") || window.location.hostname.includes("cue.optimaai.eu"));
+    }
   }, []);
 
   if (!mounted) return null;
-
-  const isCue = pathname.startsWith("/cue") || pathname.includes("cue.optimaai.eu");
 
   return (
     <AnimatePresence>
