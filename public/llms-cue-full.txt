@@ -93,6 +93,6 @@ Here are 5 specific scenarios where Cue excels:
 OptimaAI is a web development and AI automation company based in Budapest, Hungary. Cue is a productized service offering created by the OptimaAI team to serve international clients with an asynchronous, high-speed development model.
 
 ## Contact
-Email: hello@optimaai.eu
+Email: info@optimaai.eu
 Website: https://cue.optimaai.eu
 Parent Company: https://optimaai.eu

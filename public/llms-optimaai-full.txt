@@ -1,0 +1,12 @@
+# OptimaAI
+
+OptimaAI is a web development and AI automation agency based in Budapest, Hungary. We provide high-end tech solutions for international B2B clients.
+
+## Services
+- Web Development (React, Next.js, Node.js)
+- Custom SaaS solutions
+- AI Automation and Integrations (Make, Zapier, Custom LLM integrations)
+
+## Contact
+Email: info@optimaai.eu
+Website: https://optimaai.eu

@@ -26,6 +26,38 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/llms.txt",
+        has: [
+          {
+            type: "host",
+            value: "cue.optimaai.eu",
+          },
+        ],
+        destination: "/llms-cue.txt",
+      },
+      {
+        source: "/llms-full.txt",
+        has: [
+          {
+            type: "host",
+            value: "cue.optimaai.eu",
+          },
+        ],
+        destination: "/llms-cue-full.txt",
+      },
+      {
+        source: "/llms.txt",
+        destination: "/llms-optimaai.txt",
+      },
+      {
+        source: "/llms-full.txt",
+        destination: "/llms-optimaai-full.txt",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
