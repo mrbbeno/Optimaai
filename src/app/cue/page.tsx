@@ -209,6 +209,83 @@ function Scope() {
   );
 }
 
+function References() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const cases = [
+    {
+      id: "sarhegyipanorama",
+      client: "CASE STUDY",
+      title: "SÁR-HEGYI PANORAMA REAL ESTATE.",
+      url: "/cue/referenciak/sarhegyipanorama",
+      stats: ["<0.5s LOAD", "$0 INFRASTRUCTURE", "3-7 LEADS/WK"],
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+    }
+  ];
+
+  return (
+    <section className="py-20 md:py-32 bg-[#030303] px-4 md:px-6 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-16 md:mb-24"
+        >
+          <div className="font-[family-name:var(--font-geist-mono)] text-[12px] text-white/40 uppercase tracking-[0.5em] mb-6">
+            Case Studies
+          </div>
+          <h2 className="font-[family-name:var(--font-geist)] font-black text-[12vw] md:text-[8vw] leading-[0.8] text-white tracking-tighter">
+            PROVEN WORK.
+          </h2>
+        </motion.div>
+
+        <div className="flex flex-col relative z-20">
+          {cases.map((c, i) => (
+            <motion.a
+              href={c.url}
+              key={c.id}
+              onMouseEnter={() => setHoveredIndex(i)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="group relative py-12 block hover:bg-white/[0.02] transition-colors duration-500 rounded-[32px] -mx-4 md:-mx-6 px-4 md:px-6 overflow-hidden"
+            >
+              {/* Floating Image Reveal Removed per request */}
+
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative z-10">
+                <div className="flex-1">
+                  <div className="font-[family-name:var(--font-geist-mono)] text-[12px] text-white/40 uppercase tracking-widest mb-4 group-hover:text-white/60 transition-colors duration-500">
+                    {c.client}
+                  </div>
+                  <h3 className="font-[family-name:var(--font-geist)] font-black text-[32px] md:text-[64px] text-white tracking-tighter leading-[0.9] group-hover:translate-x-4 transition-transform duration-500 ease-[0.16,1,0.3,1] max-w-4xl">
+                    {c.title}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap md:flex-col gap-4 md:gap-2 items-start md:items-end w-full md:w-auto">
+                  {c.stats.map(stat => (
+                    <span key={stat} className="font-[family-name:var(--font-geist-mono)] text-[10px] md:text-[12px] px-3 py-1 bg-white/5 rounded-full text-white/60 group-hover:bg-white/10 group-hover:text-white transition-colors duration-500">
+                      {stat}
+                    </span>
+                  ))}
+                </div>
+                <div className="hidden lg:flex w-16 h-16 rounded-full bg-white/5 items-center justify-center group-hover:bg-white group-hover:text-black group-hover:scale-110 transition-all duration-500 shrink-0">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </div>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Pricing() {
   const tiers = [
     {
@@ -499,6 +576,7 @@ export default function Home() {
       <StickyHero />
       <StickyProcess />
       <Scope />
+      <References />
       <Pricing />
       <FAQ />
       <CTA />
