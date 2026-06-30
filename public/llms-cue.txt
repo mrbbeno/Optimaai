@@ -63,5 +63,6 @@ OptimaAI is a web development and AI automation company based in Budapest, Hunga
 
 ## Contact
 Email: info@optimaai.eu
-Website: https://cue.optimaai.eu
-Parent Company: https://optimaai.eu
+Website: [Cue by OptimaAI](https://cue.optimaai.eu)
+Parent Company: [OptimaAI](https://optimaai.eu)
+Full context: [llms-cue-full.txt](/llms-cue-full.txt)

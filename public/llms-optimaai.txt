@@ -9,4 +9,5 @@ OptimaAI is a web development and AI automation agency based in Budapest, Hungar
 
 ## Contact
 Email: info@optimaai.eu
-Website: https://optimaai.eu
+Website: [OptimaAI](https://optimaai.eu)
+Full context: [llms-optimaai-full.txt](/llms-optimaai-full.txt)

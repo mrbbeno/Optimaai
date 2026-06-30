@@ -32,4 +32,4 @@ Sitemap: https://optimaai.eu/sitemap.xml
 
 # LLM Discoverability
 Host: https://cue.optimaai.eu
-LLMs.txt: https://cue.optimaai.eu/llms.txt
+# LLMs.txt: https://cue.optimaai.eu/llms.txt

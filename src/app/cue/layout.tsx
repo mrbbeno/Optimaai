@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 import CueStructuredData from "@/components/CueStructuredData";
 
 export const metadata: Metadata = {
-  title: "Cue by OptimaAI — Async Dev Subscription | $2,495/mo",
+  title: "Cue by OptimaAI — Async Dev Subscription | from $199/mo",
   description: "Get async web development delivered in 48 hours. One request at a time, no meetings, no estimates. Next.js, React, Supabase, APIs. Pause or cancel anytime.",
   keywords: "async dev subscription, productized development, web development subscription, async web development, no-meeting developer, Next.js developer subscription, React developer retainer, Supabase developer, API integration service, dev subscription service, Designjoy for developers, async studio, remote developer subscription",
   authors: [{ name: "OptimaAI" }],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: "https://cue.optimaai.eu",
     siteName: "Cue by OptimaAI",
     title: "Cue — Async Dev Subscription. Delivered in 48h.",
-    description: "Subscribe to Cue and get focused web development delivered in 48 hours. No meetings, no estimates. Next.js, React, Supabase, APIs. $2,495/month.",
+    description: "Subscribe to Cue and get focused web development delivered in 48 hours. No meetings, no estimates. Next.js, React, Supabase, APIs. from $199/month.",
     locale: "en_US",
     images: [
       {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Cue — Dev work. Delivered in 48h.",
-    description: "Async dev subscription. One request at a time. No meetings. $2,495/mo.",
+    description: "Async dev subscription. One request at a time. No meetings. from $199/mo.",
     images: ["/og-image"],
   },
   category: "technology",

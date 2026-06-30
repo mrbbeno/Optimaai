@@ -86,7 +86,7 @@ export async function GET(req: NextRequest) {
               letterSpacing: '0.02em',
             }}
           >
-            $2,495/mo · Async · No meetings · cue.optimaai.eu
+            from $199/mo · Async · No meetings · cue.optimaai.eu
           </div>
         </div>
       ),
